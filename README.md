@@ -8,7 +8,7 @@ npm i -g openskills
 openskills install  smartdddlab/smartddd-skills-repo
 ```
 
-- **[openskills](https://github.com/numman-ali/openskills)**: OpenSkills 将Anthropic 的技能系统引入所有 AI 编码代理（
+- **[openskills](https://github.com/numman-ali/openskills)**: OpenSkills brings Anthropic's skills system to all AI coding agents (Claude Code, Cursor, Windsurf, Aider).
 
 ## Skills 分类
 
