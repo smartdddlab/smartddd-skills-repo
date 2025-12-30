@@ -16,7 +16,8 @@ openskills install  smartdddlab/smartddd-skills-repo
 
 | Skill | 版本 | 状态 | 职责 |
 |-------|------|------|------|
-| [superclaude-enhancer](./superclaude-enhancer/) | 1.0 | active | SuperClaude 增强器 |
+| [superclaude-enhancer](./superclaude-enhancer/) | 1.0 | active | SuperClaude 增强器 (Hook 机制) |
+| [superclaude-bridge](./superclaude-bridge/) | 1.0 | active | SuperClaude 命令桥接器 (极简路由) |
 
 ### uniapp
 | Skill | 版本 | 状态 | 职责 |
@@ -42,8 +43,7 @@ openskills install  smartdddlab/smartddd-skills-repo
 ## 来源记录
 | Skill | 来源 | 协议 |修改状态|
 |-------|------|------|------|
-| [superclaude-enhancer](./superclaude-enhancer/) | [AI_ad_spend02](https://github.com/wade56754/AI_ad_spend02.git) | -  |修订|
-
+| [superclaude-enhancer](./superclaude-enhancer/) | [AI_ad_spend02](https://github.com/wade56754/AI_ad_spend02.git) | - | 修订 |
 
 ### 版本管理
 
@@ -55,4 +55,5 @@ openskills install  smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2025-12-31 | 1.1.0 | 新增 superclaude-bridge (极简命令桥接器) |
 | 2025-12-30 | 1.0.0 | 初始版本 |
