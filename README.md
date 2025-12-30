@@ -18,16 +18,16 @@ openskills install  smartdddlab/smartddd-skills-repo
 |-------|------|------|------|
 | [superclaude-enhancer](./superclaude-enhancer/) | 1.0 | active | SuperClaude 增强器 |
 
-### uniapp 
+### uniapp
 | Skill | 版本 | 状态 | 职责 |
 |-------|------|------|------|
-| [superclaude-enhancer](./superclaude-enhancer/) | 1.0 | active | SuperClaude 增强器 |
+|  |  |  |  |
 
 ## 开发规范
 
 ### 创建新 Skill
 
-1. 在 `.claude/skills/` 下创建目录
+1. 在 `{类别}` 下创建目录`{SKILL-name}`
 2. 创建 `SKILL.md` 文件 (大写)
 3. 添加完整的 YAML frontmatter
 4. 定义 XML 结构化的 Skill 内容
@@ -35,8 +35,15 @@ openskills install  smartdddlab/smartddd-skills-repo
 
 ### Skill 文件命名
 
-- 目录名: `ai-ad-{domain}-{function}`
+- 目录名: `{skill}-{name}`
 - 文件名: `SKILL.md` (大写) 
+
+
+## 来源记录
+| Skill | 来源 | 协议 |修改状态|
+|-------|------|------|------|
+| [superclaude-enhancer](./superclaude-enhancer/) | [AI_ad_spend02](https://github.com/wade56754/AI_ad_spend02.git) | -  |修订|
+
 
 ### 版本管理
 
@@ -48,5 +55,4 @@ openskills install  smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
-| 2025-12-07 | 1.1 | 新增 ai-ad-flow-orchestrator，完善 /dev-flow 命令映射 |
-| 2025-12-07 | 1.0 | 初始版本，完成从 Python Agent 到纯 Skill 架构迁移 |
+| 2025-12-30 | 1.0.0 | 初始版本 |
