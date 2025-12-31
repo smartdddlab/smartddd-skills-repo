@@ -166,11 +166,91 @@ version: 0.1.0
 
     **注意**: 这个 Skill 不直接执行命令，仅返回路由后的 /sc:* 命令字符串。
          实际执行由调用方负责。
-    </output_contract>
+  </output_contract>
 
 
   <!-- ======================================================
-       7. 使用方式 (Usage)
+       7. 标志支持 (Flags)
+  ====================================================== -->
+  <flags>
+    Bridge Skill 支持传递标准 SuperClaude 标志，标志会附加到路由后的命令中。
+
+    ## 7.1 核心分析标志
+
+    | 标志 | 何时使用 | 作用 |
+    |------|----------|------|
+    | `--think` | 5+ 文件或复杂分析 | 标准结构化分析（约 4K 令牌）|
+    | `--think-hard` | 架构分析、系统依赖 | 深度分析（约 10K 令牌）|
+    | `--ultrathink` | 关键系统重设计 | 最大深度分析（约 32K 令牌）|
+    | `--brainstorm` | 模糊请求、探索模式 | 协作发现思维模式 |
+
+    ## 7.2 MCP 服务器标志
+
+    | 标志 | 服务器 | 目的 | 自动触发场景 |
+    |------|--------|-------|---------------|
+    | `--c7` / `--context7` | Context7 | 官方文档查询 | 库导入、框架问题 |
+    | `--seq` / `--sequential` | Sequential | 多步推理 | 复杂调试、系统设计 |
+    | `--magic` | Magic | UI 组件生成 | `/ui` 命令、前端关键词 |
+    | `--play` / `--playwright` | Playwright | 浏览器测试 | 测试请求、视觉验证 |
+    | `--morph` / `--morphllm` | Morphllm | 批量转换 | 批量操作、样式编辑 |
+    | `--serena` | Serena | 符号操作 | 项目内存、大型代码库 |
+
+    ## 7.3 执行控制标志
+
+    | 标志 | 目的 | 值 |
+    |------|------|----|
+    | `--focus` | 领域定向 | `security`, `performance`, `quality`, `architecture` |
+    | `--scope` | 分析边界 | `file`, `module`, `project`, `system` |
+    | `--type` | 改进类型 | `quality`, `performance`, `maintainability`, `style`, `security` |
+    | `--perf` | 性能优化 | 布尔值 |
+    | `--safe` | 保守方法 | 布尔值 |
+    | `--interactive` | 用户指导 | 布尔值 |
+    | `--preview` | 预览模式 | 布尔值 |
+    | `--validate` | 执行前验证 | 布尔值 |
+    | `--loop` | 迭代改进 | 布尔值 |
+    | `--delegate` | 子智能体委托 | 布尔值 |
+    | `--smart-commit` | Git 智能提交 | 布尔值 |
+    | `--token-efficient` / `--uc` | 令牌压缩 | 布尔值 |
+
+    ## 7.4 标志传递示例
+
+    ```json
+    // 输入：带标志的调用
+    {
+      "command": "improve",
+      "target": "./src",
+      "options": "--type quality --safe --validate"
+    }
+
+    // 路由输出
+    "/sc:improve ./src --type quality --safe --validate"
+    ```
+
+    ## 7.5 常用组合模式
+
+    | 场景 | 命令示例 |
+    |------|----------|
+    | 质量改进 | `improve ./src --type quality --safe` |
+    | 性能优化 | `improve ./src --type performance --focus perf` |
+    | 安全扫描 | `analyze ./src --focus security --seq` |
+    | 深度分析 | `analyze ./src --think-hard --all-mcp` |
+    | 迭代改进 | `improve ./src --loop --validate` |
+    | Git 智能提交 | `git commit --smart-commit` |
+
+    ## 7.6 标志优先级规则
+
+    1. **安全第一**: `--safe-mode` > `--validate` > 优化标志
+    2. **显式覆盖**: 用户标志 > 自动检测
+    3. **深度层次**: `--ultrathink` > `--think-hard` > `--think`
+    4. **MCP 控制**: `--no-mcp` 覆盖所有单独的 MCP 标志
+
+    **注意**: Bridge 本身不解析标志，仅负责将 `options` 字段的内容附加到输出命令中。
+             标志的实际解析和执行由 SuperClaude 命令完成。
+  </flags>
+
+
+  <!-- ======================================================
+       8. 使用方式 (Usage)
   ====================================================== -->
   <usage>
     **方式 1: BMAD Agent 集成**
@@ -201,10 +281,10 @@ version: 0.1.0
 
 
   <!-- ======================================================
-       8. BMAD 集成示例
+       9. BMAD 集成示例
   ====================================================== -->
   <bmad_integration>
-    ## 8.1 完整 Menu 配置
+    ## 9.1 完整 Menu 配置
 
     在 BMAD agent.yaml 的 menu 中添加：
 
@@ -256,7 +336,7 @@ version: 0.1.0
         description: "Git 工作流辅助"
     ```
 
-    ## 8.2 完整 Workflow 示例
+    ## 9.2 完整 Workflow 示例
 
     ```yaml
     workflows:
@@ -279,7 +359,7 @@ version: 0.1.0
             exec: "使用 superclaude-bridge，command=improve，target={{error_file}}"
     ```
 
-    ## 8.3 变量占位符说明
+    ## 9.3 变量占位符说明
 
     | 占位符 | 说明 | 示例值 |
     |--------|------|--------|
@@ -290,7 +370,7 @@ version: 0.1.0
     | `{{cursor}}` | 光标所在位置的文件 | `./src/App.tsx` |
     | `{{.}}` | 当前项目根目录 | `.` |
 
-    ## 8.4 最佳实践
+    ## 9.4 最佳实践
 
     **推荐配置原则**:
 
@@ -326,7 +406,7 @@ version: 0.1.0
 
 
   <!-- ======================================================
-       9. spec-kit 集成示例
+       10. spec-kit 集成示例
   ====================================================== -->
   <spec_kit_integration>
     在 spec-kit commands 中添加：
@@ -358,7 +438,7 @@ version: 0.1.0
 
 
   <!-- ======================================================
-       10. 为什么这个方案简单
+       11. 为什么这个方案简单
   ====================================================== -->
   <why_simple>
     | 方面 | 复杂方案 (Hook) | 简单方案 (Bridge) |
@@ -379,7 +459,7 @@ version: 0.1.0
 
 
   <!-- ======================================================
-       11. 测试指南 (Testing)
+       12. 测试指南 (Testing)
   ====================================================== -->
   <testing>
     **路由正确性测试**:
@@ -403,13 +483,12 @@ version: 0.1.0
 
 
   <!-- ======================================================
-       12. 兼容性说明 (Compatibility)
+       13. 兼容性说明 (Compatibility)
   ====================================================== -->
   <compatibility>
     | 环境 | 状态 | 说明 |
     |------|------|------|
-    | SuperClaude v3.x | ✅ 兼容 | 完整支持所有命令 |
-    | SuperClaude v2.x | ✅ 兼容 | 完整支持所有命令 |
+    | SuperClaude v4.x | ✅ 兼容 | 完整支持所有命令 |
     | BMAD Agent | ✅ 兼容 | 通过 menu trigger 集成 |
     | spec-kit | ✅ 兼容 | 通过 commands 调用 |
     | CLI 环境 | ✅ 兼容 | 支持命令行参数 |
