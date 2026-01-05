@@ -14,7 +14,7 @@ tags:
 requirements:
   - "SuperClaude Framework (任意版本)"
   - "BMAD Agent 或 spec-kit 环境（可选）"
-version: 0.1.0
+version: 1.2
 ---
 
 <skill>
@@ -23,7 +23,7 @@ version: 0.1.0
 ═══════════════════════════════════════════════════════════════════
 
   <name>superclaude-bridge</name>
-  <version>1.1</version>
+  <version>1.2</version>
   <domain>Bridge / Command Routing</domain>
   <profile>Zero-Config / Direct-Routing / Universal</profile>
 
@@ -46,14 +46,16 @@ version: 0.1.0
        2. 约束与限制 (Limitations)
   ====================================================== -->
   <limitations>
-    **当前版本支持的核心命令**（共 10 个）:
-    - analyze, troubleshoot, research, explain, improve
-    - design, build, document, test, git
+    **当前版本支持的核心命令**（共 23 个）:
+    - **核心命令 (10)**: analyze, troubleshoot, research, explain, improve, design, build, document, test, git
+    - **扩展命令 (9)**: cleanup, task, index, load, save, spawn, workflow, reflect, select-tool
+    - **专业命令 (4)**: implement, estimate, business-panel, spec-panel
 
     **说明**:
     - 这是 SuperClaude 命令的 **路由器**，不是执行器
     - 返回路由后的命令字符串，由调用方负责执行
     - 完整命令列表请参考 `/sc:help`
+    - 支持直接使用完整 `/sc:*` 命令格式
   </limitations>
 
 
@@ -85,6 +87,7 @@ version: 0.1.0
        4. 命令路由表 (Command Routing) - 完整版
   ====================================================== -->
   <routing_table>
+    **核心命令映射**（共 10 个）:
     | 输入命令 | 执行的 SuperClaude 命令 | 说明 |
     |----------|------------------------|------|
     | analyze | /sc:analyze | 代码质量分析 |
@@ -98,13 +101,34 @@ version: 0.1.0
     | test | /sc:test | 测试执行 |
     | git | /sc:git | Git 操作 |
 
-    **扩展命令映射**（在 commands 中可直接使用完整 /sc:* 命令）:
-    | 命令格式 | 说明 |
-    |----------|------|
-    | /sc:spawn [args] | 任务编排 |
-    | /sc:workflow [args] | 工作流生成 |
-    | /sc:cleanup [args] | 项目清理 |
-    | /sc:estimate [args] | 开发估算 |
+    **扩展命令映射**（共 9 个）:
+    | 输入命令 | 执行的 SuperClaude 命令 | 说明 |
+    |----------|------------------------|------|
+    | cleanup | /sc:cleanup | 项目清理 |
+    | task | /sc:task | 任务管理 |
+    | index | /sc:index | 知识索引 |
+    | load | /sc:load | 项目上下文加载 |
+    | save | /sc:save | 会话保存 |
+    | spawn | /sc:spawn | 任务编排 |
+    | workflow | /sc:workflow | 工作流生成 |
+    | reflect | /sc:reflect | 任务反思 |
+    | select-tool | /sc:select-tool | 工具选择 |
+
+    **专业命令映射**（共 4 个）:
+    | 输入命令 | 执行的 SuperClaude 命令 | 说明 |
+    |----------|------------------------|------|
+    | implement | /sc:implement | 功能实现 |
+    | estimate | /sc:estimate | 开发估算 |
+    | business-panel | /sc:business-panel | 商业面板分析 |
+    | spec-panel | /sc:spec-panel | 规范面板评审 |
+
+    **直接命令支持**（可直接使用完整 /sc:* 命令格式）:
+    - /sc:spawn [args] - 任务编排
+    - /sc:workflow [args] - 工作流生成
+    - /sc:cleanup [args] - 项目清理
+    - /sc:estimate [args] - 开发估算
+    - /sc:business-panel [args] - 商业面板分析
+    - /sc:spec-panel [args] - 规范面板评审
   </routing_table>
 
 
