@@ -1,0 +1,467 @@
+# Repository File Structure
+
+Total items: 461
+
+```
+📁 .claude
+📄 .env.example
+📁 .github
+📄 .gitignore
+📄 .pre-commit-config.yaml
+📄 AGENTS.md
+📄 CHANGELOG.md
+📄 CLAUDE.md
+📄 CODEOWNERS
+📄 CODE_OF_CONDUCT.md
+📄 CONTRIBUTING.md
+📄 DELETION_RATIONALE.md
+📄 KNOWLEDGE.md
+📄 LICENSE
+📄 MANIFEST.in
+📄 Makefile
+📄 PARALLEL_INDEXING_PLAN.md
+📄 PLANNING.md
+📄 PLUGIN_INSTALL.md
+📄 PROJECT_INDEX.json
+📄 PROJECT_INDEX.md
+📄 PR_DOCUMENTATION.md
+📄 QUALITY_COMPARISON.md
+📄 README-ja.md
+📄 README-kr.md
+📄 README-zh.md
+📄 README.md
+📄 SECURITY.md
+📄 TASK.md
+📄 TEST_PLUGIN.md
+📄 VERSION
+📁 docs
+📄 install.sh
+📄 package.json
+📁 plugins
+📄 pyproject.toml
+📁 scripts
+📄 setup.py
+📁 skills
+📁 src
+📁 tests
+  📄 settings.json
+  📁 skills
+  📄 FUNDING.yml
+  📄 PULL_REQUEST_TEMPLATE.md
+  📁 workflows
+  📁 Development
+  📄 PR_STRATEGY.md
+  📄 README.md
+  📁 Templates
+  📁 agents
+  📁 architecture
+  📁 developer-guide
+  📁 getting-started
+  📁 mcp
+  📁 memory
+  📁 mistakes
+  📄 next-refactor-plan.md
+  📄 plugin-reorg.md
+  📄 pm-agent-implementation-status.md
+  📁 reference
+  📁 research
+  📁 sessions
+  📁 testing
+  📁 troubleshooting
+  📁 user-guide-jp
+  📁 user-guide-kr
+  📁 user-guide-zh
+  📁 user-guide
+  📁 superclaude
+  📄 README.md
+  📄 ab_test_workflows.py
+  📄 analyze_workflow_metrics.py
+  📄 build_superclaude_plugin.py
+  📄 cleanup.sh
+  📄 publish.sh
+  📄 uninstall_legacy.sh
+  📁 confidence-check
+  📁 superclaude
+  📄 __init__.py
+  📄 conftest.py
+  📁 integration
+  📁 unit
+    📁 confidence-check
+    📄 README.md
+    📄 publish-pypi.yml
+    📄 quick-check.yml
+    📄 readme-quality-check.yml
+    📄 test.yml
+    📄 ARCHITECTURE.md
+    📄 PROJECT_STATUS.md
+    📄 ROADMAP.md
+    📄 TASKS.md
+    📄 hypothesis-pm-autonomous-enhancement-2025-10-14.md
+    📄 installation-flow-understanding.md
+    📄 pm-agent-ideal-workflow.md
+    📄 pm-agent-integration.md
+    📄 project-structure-understanding.md
+    📁 tasks
+    📄 __init__.py
+    📄 pm-agent-guide.md
+    📄 CONTEXT_WINDOW_ANALYSIS.md
+    📄 MIGRATION_TO_CLEAN_ARCHITECTURE.md
+    📄 PHASE_1_COMPLETE.md
+    📄 PHASE_2_COMPLETE.md
+    📄 PHASE_3_COMPLETE.md
+    📄 PM_AGENT_COMPARISON.md
+    📄 SKILLS_CLEANUP.md
+    📄 pm-agent-auto-activation.md
+    📄 pm-agent-responsibility-cleanup.md
+    📄 README.md
+    📄 contributing-code.md
+    📄 documentation-index.md
+    📄 technical-architecture.md
+    📄 testing-debugging.md
+    📄 installation.md
+    📄 quick-start.md
+    📄 mcp-integration-policy.md
+    📄 mcp-optional-design.md
+    📄 README.md
+    📄 WORKFLOW_METRICS_SCHEMA.md
+    📄 last_session.md
+    📄 next_actions.md
+    📄 patterns_learned.jsonl
+    📄 pm_context.md
+    📄 reflexion.jsonl.example
+    📄 solutions_learned.jsonl
+    📄 token_efficiency_validation.md
+    📄 workflow_metrics.jsonl
+    📄 test_database_connection-2025-11-11.md
+    📄 test_database_connection-2025-11-14.md
+    📄 test_reflexion_with_real_exception-2025-11-11.md
+    📄 test_reflexion_with_real_exception-2025-11-14.md
+    📄 unknown-2025-11-11.md
+    📄 unknown-2025-11-14.md
+    📄 README.md
+    📄 advanced-patterns.md
+    📄 advanced-workflows.md
+    📄 basic-examples.md
+    📄 claude-code-history-management.md
+    📄 commands-list.md
+    📄 common-issues.md
+    📄 comprehensive-features.md
+    📄 diagnostic-reference.md
+    📄 examples-cookbook.md
+    📄 integration-patterns.md
+    📄 mcp-server-guide.md
+    📄 pm-agent-autonomous-reflection.md
+    📄 suggested-commands.md
+    📄 troubleshooting.md
+    📄 complete-python-skills-migration.md
+    📄 intelligent-execution-architecture.md
+    📄 llm-agent-token-efficiency-2025.md
+    📄 markdown-to-python-migration-plan.md
+    📄 mcp-installer-fix-summary.md
+    📄 parallel-execution-complete-findings.md
+    📄 parallel-execution-findings.md
+    📄 phase1-implementation-strategy.md
+    📄 pm-mode-performance-analysis.md
+    📄 pm-mode-validation-methodology.md
+    📄 pm-skills-migration-results.md
+    📄 pm_agent_roi_analysis_2025-10-21.md
+    📄 python_src_layout_research_20251021.md
+    📄 reflexion-integration-2025.md
+    📄 repository-understanding-proposal.md
+    📄 research_git_branch_integration_2025.md
+    📄 research_installer_improvements_20251017.md
+    📄 research_oss_fork_workflow_2025.md
+    📄 research_python_directory_naming_20251015.md
+    📄 research_python_directory_naming_automation_2025.md
+    📄 research_repository_scoped_memory_2025-10-16.md
+    📄 research_serena_mcp_2025-01-16.md
+    📄 skills-migration-test.md
+    📄 task-tool-parallel-execution-results.md
+    📄 2025-10-14-summary.md
+    📄 pm-workflow-test-results.md
+    📄 procedures.md
+    📄 serena-installation.md
+    📄 agents.md
+    📄 commands.md
+    📄 flags.md
+    📄 mcp-servers.md
+    📄 modes.md
+    📄 session-management.md
+    📄 agents.md
+    📄 commands.md
+    📄 flags.md
+    📄 mcp-servers.md
+    📄 modes.md
+    📄 session-management.md
+    📄 agents.md
+    📄 commands.md
+    📄 flags.md
+    📄 mcp-servers.md
+    📄 modes.md
+    📄 session-management.md
+    📄 agents.md
+    📄 commands.md
+    📄 flags.md
+    📄 mcp-installation.md
+    📄 mcp-servers.md
+    📄 memory-system.md
+    📄 modes.md
+    📄 session-management.md
+    📄 __init__.py
+    📁 agents
+    📁 commands
+    📁 core
+    📁 examples
+    📁 hooks
+    📁 mcp
+    📁 modes
+    📁 scripts
+    📁 skills
+    📄 SKILL.md
+    📄 confidence.ts
+    📄 __init__.py
+    📄 __version__.py
+    📁 agents
+    📁 cli
+    📁 commands
+    📁 core
+    📁 examples
+    📁 execution
+    📁 hooks
+    📁 mcp
+    📁 modes
+    📁 pm_agent
+    📄 pytest_plugin.py
+    📁 scripts
+    📁 skills
+    📄 __init__.py
+    📄 test_pytest_plugin.py
+    📄 __init__.py
+    📄 test_cli_install.py
+    📄 test_confidence.py
+    📄 test_reflexion.py
+    📄 test_self_check.py
+    📄 test_token_budget.py
+      📄 SKILL.md
+      📄 confidence.ts
+      📄 current-tasks.md
+      📄 __init__.py
+      📄 backend-architect.md
+      📄 business-panel-experts.md
+      📄 deep-research-agent.md
+      📄 deep-research.md
+      📄 devops-architect.md
+      📄 frontend-architect.md
+      📄 learning-guide.md
+      📄 performance-engineer.md
+      📄 pm-agent.md
+      📄 python-expert.md
+      📄 quality-engineer.md
+      📄 refactoring-expert.md
+      📄 repo-index.md
+      📄 requirements-analyst.md
+      📄 root-cause-analyst.md
+      📄 security-engineer.md
+      📄 self-review.md
+      📄 socratic-mentor.md
+      📄 system-architect.md
+      📄 technical-writer.md
+      📄 __init__.py
+      📄 agent.md
+      📄 analyze.md
+      📄 brainstorm.md
+      📄 build.md
+      📄 business-panel.md
+      📄 cleanup.md
+      📄 design.md
+      📄 document.md
+      📄 estimate.md
+      📄 explain.md
+      📄 git.md
+      📄 help.md
+      📄 implement.md
+      📄 improve.md
+      📄 index-repo.md
+      📄 index.md
+      📄 load.md
+      📄 pm.md
+      📄 recommend.md
+      📄 reflect.md
+      📄 research.md
+      📄 save.md
+      📄 sc.md
+      📄 select-tool.md
+      📄 spawn.md
+      📄 spec-panel.md
+      📄 task.md
+      📄 test.md
+      📄 troubleshoot.md
+      📄 workflow.md
+      📄 BUSINESS_PANEL_EXAMPLES.md
+      📄 BUSINESS_SYMBOLS.md
+      📄 FLAGS.md
+      📄 PRINCIPLES.md
+      📄 RESEARCH_CONFIG.md
+      📄 RULES.md
+      📄 __init__.py
+      📄 __init__.py
+      📄 deep_research_workflows.md
+      📄 __init__.py
+      📄 hooks.json
+      📄 MCP_Chrome-DevTools.md
+      📄 MCP_Context7.md
+      📄 MCP_Magic.md
+      📄 MCP_Morphllm.md
+      📄 MCP_Playwright.md
+      📄 MCP_Sequential.md
+      📄 MCP_Serena.md
+      📄 MCP_Tavily.md
+      📄 __init__.py
+      📁 configs
+      📄 MODE_Brainstorming.md
+      📄 MODE_Business_Panel.md
+      📄 MODE_DeepResearch.md
+      📄 MODE_Introspection.md
+      📄 MODE_Orchestration.md
+      📄 MODE_Task_Management.md
+      📄 MODE_Token_Efficiency.md
+      📄 __init__.py
+      📄 __init__.py
+      📄 clean_command_names.py
+      📄 session-init.sh
+      📄 __init__.py
+      📁 confidence-check
+      📄 README.md
+      📄 __init__.py
+      📄 backend-architect.md
+      📄 business-panel-experts.md
+      📄 deep-research-agent.md
+      📄 deep-research.md
+      📄 devops-architect.md
+      📄 frontend-architect.md
+      📄 learning-guide.md
+      📄 performance-engineer.md
+      📄 pm-agent.md
+      📄 python-expert.md
+      📄 quality-engineer.md
+      📄 refactoring-expert.md
+      📄 repo-index.md
+      📄 requirements-analyst.md
+      📄 root-cause-analyst.md
+      📄 security-engineer.md
+      📄 self-review.md
+      📄 socratic-mentor.md
+      📄 system-architect.md
+      📄 technical-writer.md
+      📄 __init__.py
+      📄 doctor.py
+      📄 install_commands.py
+      📄 install_mcp.py
+      📄 install_skill.py
+      📄 main.py
+      📄 README.md
+      📄 __init__.py
+      📄 agent.md
+      📄 analyze.md
+      📄 brainstorm.md
+      📄 build.md
+      📄 business-panel.md
+      📄 cleanup.md
+      📄 design.md
+      📄 document.md
+      📄 estimate.md
+      📄 explain.md
+      📄 git.md
+      📄 help.md
+      📄 implement.md
+      📄 improve.md
+      📄 index-repo.md
+      📄 index.md
+      📄 load.md
+      📄 pm.md
+      📄 recommend.md
+      📄 reflect.md
+      📄 research.md
+      📄 save.md
+      📄 sc.md
+      📄 select-tool.md
+      📄 spawn.md
+      📄 spec-panel.md
+      📄 task.md
+      📄 test.md
+      📄 troubleshoot.md
+      📄 workflow.md
+      📄 BUSINESS_PANEL_EXAMPLES.md
+      📄 BUSINESS_SYMBOLS.md
+      📄 FLAGS.md
+      📄 PRINCIPLES.md
+      📄 RESEARCH_CONFIG.md
+      📄 RULES.md
+      📄 __init__.py
+      📄 __init__.py
+      📄 deep_research_workflows.md
+      📄 __init__.py
+      📄 parallel.py
+      📄 reflection.py
+      📄 self_correction.py
+      📄 README.md
+      📄 __init__.py
+      📄 hooks.json
+      📄 MCP_Airis-Agent.md
+      📄 MCP_Chrome-DevTools.md
+      📄 MCP_Context7.md
+      📄 MCP_Magic.md
+      📄 MCP_Mindbase.md
+      📄 MCP_Morphllm.md
+      📄 MCP_Playwright.md
+      📄 MCP_Sequential.md
+      📄 MCP_Serena.md
+      📄 MCP_Tavily.md
+      📄 __init__.py
+      📁 configs
+      📄 MODE_Brainstorming.md
+      📄 MODE_Business_Panel.md
+      📄 MODE_DeepResearch.md
+      📄 MODE_Introspection.md
+      📄 MODE_Orchestration.md
+      📄 MODE_Task_Management.md
+      📄 MODE_Token_Efficiency.md
+      📄 __init__.py
+      📄 __init__.py
+      📄 confidence.py
+      📄 reflexion.py
+      📄 self_check.py
+      📄 token_budget.py
+      📄 README.md
+      📄 __init__.py
+      📄 clean_command_names.py
+      📄 session-init.sh
+      📄 __init__.py
+      📁 confidence-check
+        📄 __init__.py
+        📄 context7.json
+        📄 magic.json
+        📄 morphllm.json
+        📄 playwright.json
+        📄 sequential.json
+        📄 serena-docker.json
+        📄 serena.json
+        📄 tavily.json
+        📄 SKILL.md
+        📄 __init__.py
+        📄 confidence.ts
+        📄 __init__.py
+        📄 airis-agent.json
+        📄 context7.json
+        📄 magic.json
+        📄 mindbase.json
+        📄 morphllm.json
+        📄 playwright.json
+        📄 sequential.json
+        📄 serena-docker.json
+        📄 serena.json
+        📄 tavily.json
+        📄 SKILL.md
+        📄 __init__.py
+        📄 confidence.ts
+```
