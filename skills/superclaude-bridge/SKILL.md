@@ -14,7 +14,7 @@ tags:
 requirements:
   - "SuperClaude Framework (任意版本)"
   - "BMAD Agent 或 spec-kit 环境（可选）"
-version: 1.3
+version: 1.4
 ---
 
 <skill>
@@ -23,7 +23,7 @@ version: 1.3
 ═══════════════════════════════════════════════════════════════════
 
   <name>superclaude-bridge</name>
-  <version>1.3</version>
+  <version>1.4</version>
   <domain>Bridge / Command Routing</domain>
   <profile>Zero-Config / Direct-Routing / Universal</profile>
 
@@ -46,8 +46,8 @@ version: 1.3
        2. 约束与限制 (Limitations)
   ====================================================== -->
   <limitations>
-    **当前版本支持的命令**（共 25 个）:
-    - **核心命令 (12)**: analyze, brainstorm, troubleshoot, research, explain, improve, design, build, document, test, git, help
+    **当前版本支持的命令**（共 24 个）:
+    - **核心命令 (11)**: analyze, brainstorm, troubleshoot, explain, improve, design, build, document, test, git, help
     - **扩展命令 (9)**: cleanup, task, index, load, save, spawn, workflow, reflect, select-tool
     - **专业命令 (4)**: implement, estimate, business-panel, spec-panel
 
@@ -87,13 +87,12 @@ version: 1.3
        4. 命令路由表 (Command Routing) - 完整版
   ====================================================== -->
   <routing_table>
-    **核心命令映射**（共 12 个）:
+    **核心命令映射**（共 11 个）:
     | 输入命令 | 执行的 SuperClaude 命令 | 说明 |
     |----------|------------------------|------|
     | analyze | /sc:analyze | 代码质量分析 |
     | brainstorm | /sc:brainstorm | 交互式需求发现 |
     | troubleshoot | /sc:troubleshoot | 问题诊断 |
-    | research | /sc:research | 技术研究 |
     | explain | /sc:explain | 概念解释 |
     | improve | /sc:improve | 代码改进 |
     | design | /sc:design | 设计建议 |

@@ -23,7 +23,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [superclaude-bridge](./skills/superclaude-bridge/) | 1.3 | 🟢 活跃 | SuperClaude 命令桥接器（极简路由） | 将任意命令路由到 `/sc:*` 命令（支持 25 个命令） |
+| [superclaude-bridge](./skills/superclaude-bridge/) | 1.4 | 🟢 活跃 | SuperClaude 命令桥接器（极简路由） | 将任意命令路由到 `/sc:*` 命令（支持 24 个命令） |
 | [SuperClaude](./skills/SuperClaude/) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
 
 ### 📱 uniapp 相关技能
@@ -36,13 +36,12 @@ openskills install smartdddlab/smartddd-skills-repo
 - **直接路由**：命令参数 → `/sc:*` 命令
 - **通用兼容**：BMAD、spec-kit、通用项目都能使用
 
-### 支持的命令（12个核心命令）
+### 支持的命令（11个核心命令）
 | 输入命令 | 执行的 SuperClaude 命令 | 说明 |
 |----------|------------------------|------|
 | `analyze` | `/sc:analyze` | 代码质量分析 |
 | `brainstorm` | `/sc:brainstorm` | 交互式需求发现 |
 | `troubleshoot` | `/sc:troubleshoot` | 问题诊断 |
-| `research` | `/sc:research` | 技术研究 |
 | `explain` | `/sc:explain` | 概念解释 |
 | `improve` | `/sc:improve` | 代码改进 |
 | `design` | `/sc:design` | 设计建议 |
@@ -315,6 +314,7 @@ version: x.x.x
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-01-06 | 1.4.0 | 修复: 移除非官方命令 research；命令数 25 → 24（与官方一致） |
 | 2026-01-06 | 1.3.0 | 添加 brainstorm、help 命令（共25个命令）；更新扩展命令列表 |
 | 2026-01-06 | 1.2.0 | 添加 cleanup、task、index、load、save、spawn、workflow、reflect、select-tool、implement、estimate、business-panel、spec-panel（共23个命令） |
 | 2025-12-31 | 1.1.0 | 新增 superclaude-bridge（极简命令桥接器） |
