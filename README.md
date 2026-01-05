@@ -23,7 +23,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [superclaude-bridge](./skills/superclaude-bridge/) | 1.1 | 🟢 活跃 | SuperClaude 命令桥接器（极简路由） | 将任意命令路由到 `/sc:*` 命令 |
+| [superclaude-bridge](./skills/superclaude-bridge/) | 1.2 | 🟢 活跃 | SuperClaude 命令桥接器（极简路由） | 将任意命令路由到 `/sc:*` 命令（支持 23 个命令） |
 | [SuperClaude](./skills/SuperClaude/) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
 
 ### 📱 uniapp 相关技能
