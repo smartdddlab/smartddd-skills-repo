@@ -23,8 +23,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [smart-superclaude-executor](./skills/general/smart-superclaude-executor/) | 1.0 | 🟢 新增 | Smart SuperClaude 执行器 | 动态调用并执行 SuperClaude 命令，增强代码开发、问题分析、测试执行和 Git 操作 |
-| [SuperClaude](./skills/SuperClaude/) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
+| [SuperClaude](./skills/SuperClaude/SKILL.md) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
 
 ### 📱 uniapp 相关技能
 *（暂未添加相关技能）*
@@ -79,7 +78,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
-| 2026-01-06 | 1.6.0 | 新增 smart-superclaude-executor 执行器：动态调用并执行 SuperClaude 命令，增强代码开发、问题分析、测试执行和 Git 操作能力 |
+| 2026-01-06 | 1.5.0 | 重组技能仓库结构：删除 smart-superclaude-executor，保留 SuperClaude 核心技能 |
 | 2026-01-06 | 1.4.0 | 修复: 移除非官方命令 research；命令数 25 → 24（与官方一致） |
 | 2026-01-06 | 1.3.0 | 添加 brainstorm、help 命令（共25个命令）；更新扩展命令列表 |
 | 2026-01-06 | 1.2.0 | 添加 cleanup、task、index、load、save、spawn、workflow、reflect、select-tool、implement、estimate、business-panel、spec-panel（共23个命令） |
