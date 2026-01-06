@@ -23,7 +23,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [smart-superclaude](./skills/smart-superclaude/) | 1.0 | 🟢 新增 | Smart SuperClaude 智能增强层 | 智能解析需求、动态调用 SuperClaude 命令，为 BMAD/spec-kit 提供智能增强 |
+| [smart-superclaude-executor](./skills/general/smart-superclaude-executor/) | 1.0 | 🟢 新增 | Smart SuperClaude 执行器 | 动态调用并执行 SuperClaude 命令，增强代码开发、问题分析、测试执行和 Git 操作 |
 | [SuperClaude](./skills/SuperClaude/) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
 
 ### 📱 uniapp 相关技能
@@ -79,11 +79,10 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
-| 2026-01-06 | 1.5.0 | 新增 smart-superclaude 智能增强层：智能解析需求、动态调用 SuperClaude 命令，为 BMAD/spec-kit 提供智能增强能力 |
+| 2026-01-06 | 1.6.0 | 新增 smart-superclaude-executor 执行器：动态调用并执行 SuperClaude 命令，增强代码开发、问题分析、测试执行和 Git 操作能力 |
 | 2026-01-06 | 1.4.0 | 修复: 移除非官方命令 research；命令数 25 → 24（与官方一致） |
 | 2026-01-06 | 1.3.0 | 添加 brainstorm、help 命令（共25个命令）；更新扩展命令列表 |
 | 2026-01-06 | 1.2.0 | 添加 cleanup、task、index、load、save、spawn、workflow、reflect、select-tool、implement、estimate、business-panel、spec-panel（共23个命令） |
-| 2025-12-31 | 1.1.0 | 新增 superclaude-bridge（极简命令桥接器） |
 | 2025-12-30 | 1.0.0 | 初始版本 |
 
 ## 📞 支持与反馈
