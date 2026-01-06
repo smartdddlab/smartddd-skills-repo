@@ -651,6 +651,6 @@ force delete the entire src directory
 ## Related Resources
 
 - [BMAD-METHOD](https://github.com/bmad-code-org/BMAD-METHOD) - AI-Driven Agile Development Framework
-- [SuperClaude Invoker SKILL.md](../SKILL.md) - Main skill documentation
-- [references/commands.md](../references/commands.md) - Complete command reference
-- [references/api.md](../references/api.md) - API contract details
+- [SuperClaude Invoker SKILL.md](../../SKILL.md) - Main skill documentation
+- [references/commands.md](../../references/commands.md) - Complete command reference
+- [references/api.md](../../references/api.md) - API contract details

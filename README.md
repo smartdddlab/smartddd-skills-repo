@@ -19,11 +19,13 @@ openskills install smartdddlab/smartddd-skills-repo
 
 ## 📚 技能目录
 
-### 🔌 执行器类技能
+### 🔧 开发者工具 (developer-tools)
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [superclaude-invoker](/skills/general/superclaude-invoker/) | v1.0.0 | ✅ 活跃 | 在外部工具中动态调用 SuperClaude 命令 | 代码开发增强、问题分析、测试执行、Git 工作流 |
+| [superclaude-invoker](/developer-tools/superclaude-invoker/) | v1.0.0 | ✅ 活跃 | 在外部工具中动态调用 SuperClaude 命令 | 代码开发增强、问题分析、测试执行、Git 工作流 |
+| [bmad-method](/developer-tools/bmad-method/) | - | ✅ 活跃 | AI 驱动的敏捷开发方法论 | 12 个专业代理，50+ 工作流 |
+| [skill-development](/developer-tools/skill-development/) | - | ✅ 活跃 | OpenSkills 技能开发指南 | 技能创建、最佳实践、渐进式披露 |
 
 ### 📱 uniapp 相关技能
 *（暂未添加相关技能）*
