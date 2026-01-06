@@ -19,11 +19,11 @@ openskills install smartdddlab/smartddd-skills-repo
 
 ## 📚 技能目录
 
-### 🔧 通用工具类技能
+### 🔌 执行器类技能
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
-| [SuperClaude](./skills/SuperClaude/SKILL.md) | 1.0 | 🟡 开发中 | SuperClaude 框架官方文档技能 | 提供 SuperClaude 框架的完整文档和最佳实践 |
+| [superclaude-invoker](/skills/general/superclaude-invoker/) | v1.0.0 | ✅ 活跃 | 在外部工具中动态调用 SuperClaude 命令 | 代码开发增强、问题分析、测试执行、Git 工作流 |
 
 ### 📱 uniapp 相关技能
 *（暂未添加相关技能）*
@@ -78,10 +78,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
-| 2026-01-06 | 1.5.0 | 重组技能仓库结构：删除 smart-superclaude-executor，保留 SuperClaude 核心技能 |
-| 2026-01-06 | 1.4.0 | 修复: 移除非官方命令 research；命令数 25 → 24（与官方一致） |
-| 2026-01-06 | 1.3.0 | 添加 brainstorm、help 命令（共25个命令）；更新扩展命令列表 |
-| 2026-01-06 | 1.2.0 | 添加 cleanup、task、index、load、save、spawn、workflow、reflect、select-tool、implement、estimate、business-panel、spec-panel（共23个命令） |
+| 2026-01-06 | 1.1.0 | 添加 superclaude-invoker 技能，支持在 BMAD、spec-kit 等外部工具中动态调用 SuperClaude 命令 |
 | 2025-12-30 | 1.0.0 | 初始版本 |
 
 ## 📞 支持与反馈
