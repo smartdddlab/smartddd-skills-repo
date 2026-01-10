@@ -1,0 +1,67 @@
+{
+  "name": "uniapp",
+  "description": "uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、鸿蒙Next、Web（响应式）、以及各种小程序（微信/支付宝/百度/抖音/飞书/QQ/快手/钉钉/淘宝/京东/小红书）、快应用、鸿蒙元服务等多个平台。",
+  "base_url": "https://uniapp.dcloud.net.cn/",
+  "start_urls": [
+    "https://uniapp.dcloud.net.cn/",
+    "https://uniapp.dcloud.net.cn/tutorial/",
+    "https://uniapp.dcloud.net.cn/component/",
+    "https://uniapp.dcloud.net.cn/api/",
+    "https://uniapp.dcloud.net.cn/plugin/",
+    "https://uniapp.dcloud.net.cn/ai/",
+    "https://uniapp.dcloud.net.cn/worktile/",
+    "https://uniapp.dcloud.net.cn/collocation/"
+  ],
+  "selectors": {
+    "main_content": "div.theme-container, main.page, div.page, article",
+    "title": "h1, title",
+    "content": "div.theme-default-content, div.content, article, main",
+    "code_blocks": "div[class*='language-'], pre, code",
+    "sidebar": "div.sidebar-nav, nav.sidebar, aside"
+  },
+  "url_patterns": {
+    "include": [
+      "uniapp.dcloud.net.cn"
+    ],
+    "exclude": [
+      "/search",
+      "/help",
+      "/external-links",
+      "/assets/",
+      "/.git/",
+      "/static/",
+      ".jpg",
+      ".png",
+      ".gif",
+      ".svg",
+      ".css",
+      ".js",
+      ".json",
+      "?",
+      "#"
+    ]
+  },
+  "categories": {
+    "introduction": ["介绍", "什么是", "快速上手", "由来", "选型", "案例"],
+    "tutorial": ["教程", "tutorial", "基本语言", "开发规范", "编译器", "运行时"],
+    "collocation": ["配置", "全局", "collocation", "pages", "manifest", "main", "uni-scss"],
+    "component": ["组件", "component", "view", "button", "input", "scroll-view", "swiper"],
+    "api": ["api", "API", "接口", "request", "storage", "location", "media", "device"],
+    "plugin": ["plugin", "插件", "uni-ui", "easycom", "uni_module"],
+    "ai": ["ai", "AI", "人工智能", "uni-ai"],
+    "worktile": ["工程化", "worktile", "cli", "vite", "webpack", "hbuilderx"],
+    "uts": ["uts", "UTS", "原生", "kotlin", "swift"]
+  },
+  "wait_for_selector": "div.theme-container, main.page, div.page",
+  "wait_time": 1,
+  "rate_limit": 0.5,
+  "max_pages": 1000,
+  "skip_llms_txt": true,
+  "respect_robots_txt": true,
+  "follow_links": true,
+  "max_depth": 5,
+  "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+  "timeout": 30,
+  "retry_attempts": 3,
+  "concurrent_requests": 5
+}

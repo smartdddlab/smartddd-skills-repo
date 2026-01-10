@@ -1,0 +1,44 @@
+{
+  "name": "uniCloud",
+  "description": "uniCloud 是 DCloud 联合阿里云、腾讯云、支付宝云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。使用此技能时，涉及 uniCloud 云函数、云数据库、云存储、clientDB、云对象、schema2code、uni-id、uni-pay 等开发问题。",
+  "base_url": "https://doc.dcloud.net.cn/uniCloud/",
+  "start_urls": [
+    "https://doc.dcloud.net.cn/uniCloud/",
+    "https://doc.dcloud.net.cn/uniCloud/cf-functions.html",
+    "https://doc.dcloud.net.cn/uniCloud/clientdb.html",
+    "https://doc.dcloud.net.cn/uniCloud/cf-object.html"
+  ],
+  "selectors": {
+    "main_content": "div.theme-default-content, article.content, .content, main",
+    "title": "h1, title",
+    "code_blocks": "div[class*='language-'] pre, pre code, pre",
+    "content": "div.theme-default-content, article"
+  },
+  "url_patterns": {
+    "include": ["/uniCloud/"],
+    "exclude": [
+      "/help/",
+      "/external-links/",
+      "/tutorial-legacy/",
+      "/plugin/",
+      "/uni-app/"
+    ]
+  },
+  "categories": {
+    "getting_started": ["概述", "简介", "快速入门", "tutorial", "start", "beginner", "入门"],
+    "cloud_functions": ["云函数", "云对象", "cf-functions", "cf-object", "云函数教程", "云对象教程"],
+    "database": ["数据库", "云数据库", "clientDB", "db", "database", "schema", "JQL", "opendb"],
+    "storage": ["云存储", "存储", "storage", "文件存储", "上传文件"],
+    "authentication": ["uni-id", "用户", "登录", "注册", "authentication", "用户体系", "账户"],
+    "payment": ["uni-pay", "支付", "payment", "微信支付", "支付宝"],
+    "admin": ["uni-admin", "admin", "后台", "管理端"],
+    "cms": ["uni-cms", "cms", "内容管理"],
+    "security": ["权限", "安全", "permission", "security", "角色"],
+    "api": ["api", "接口", "参考", "reference", "文档"]
+  },
+  "rate_limit": 0.5,
+  "max_pages": 300,
+  "skip_llms_txt": false,
+  "async_mode": false,
+  "workers": 1
+}
