@@ -8,6 +8,7 @@
 |------|------|------|
 | [uniapp](./uniapp/) | v1.1.0 | 使用 Vue.js 开发所有前端应用的框架，支持 iOS、Android、鸿蒙Next、Web 及各种小程序 |
 | [unicloud](./unicloud/) | v1.0.0 | DCloud 联合阿里云、腾讯云、支付宝云提供的 Serverless 云开发平台 |
+| [hbuilderx](./hbuilderx/) | v1.0.0 | DCloud 轻量级 IDE，专为 Vue 开发优化，支持多端开发、插件扩展、Markdown 编写 |
 
 ## 🚀 快速开始
 
@@ -51,6 +52,12 @@ skill_seekers scrape $REPO_ROOT/uniapp/unicloud.json
 
 # 解压到目标目录
 unzip -q -o unicloud.zip -d $REPO_ROOT/uniapp/unicloud/
+
+# 更新 HBuilderX 技能（使用本目录的 hbuilderx.json）
+skill_seekers scrape $REPO_ROOT/uniapp/hbuilderx.json
+
+# 解压到目标目录
+unzip -q -o hbuilderx.zip -d $REPO_ROOT/uniapp/hbuilderx/
 ```
 
 ### 配置文件说明
@@ -61,6 +68,7 @@ unzip -q -o unicloud.zip -d $REPO_ROOT/uniapp/unicloud/
 |------|------|
 | `uniapp.json` | uniapp 技能抓取配置 |
 | `unicloud.json` | uniCloud 技能抓取配置 |
+| `hbuilderx.json` | HBuilderX 技能抓取配置 |
 
 配置文件关键字段：
 
@@ -133,6 +141,20 @@ echo "更新完成！"
   - 内容管理 (cms.md)
   - 安全 (security.md)
 
+### HBuilderX
+
+- **官方文档**: https://hx.dcloud.net.cn/
+- **适用场景**: HBuilderX IDE 开发、插件开发、Vue 项目开发
+- **主要内容**:
+  - 安装教程 (install.md)
+  - 用户指南 (UserGuide.md)
+  - 插件开发 (ExtensionTutorial.md)
+  - 插件 API (ExtensionDocs/Api/)
+  - AI 辅助 (AI.md)
+  - 多端开发 (App.md)
+  - 版本控制 (SourceControl.md)
+  - 扩展插件 (extension.md)
+
 ## 🛠️ 开发指南
 
 ### 手动更新流程
@@ -148,12 +170,14 @@ echo "更新完成！"
 # 验证技能结构
 skills-ref validate ./uniapp/uniapp
 skills-ref validate ./uniapp/unicloud
+skills-ref validate ./uniapp/hbuilderx
 ```
 
 ## 📝 版本历史
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-01-13 | 1.2.0 | 新增 HBuilderX 技能，支持 DCloud IDE 开发、插件开发、Vue 项目开发 |
 | 2026-01-13 | 1.1.0 | 更新技能内容，添加 dev.md、hybrid.md、uni_ad.md 等新参考文档 |
 | 2026-01-11 | 1.0.0 | 初始版本，添加 uniapp 和 uniCloud 技能 |
 

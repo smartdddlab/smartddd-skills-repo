@@ -25,6 +25,9 @@ smartddd-skills-repo/
 
 ### SKILL.md 文件结构
 
+统一格式示例：
+  description: This skill should be used when the user asks to "specific phrase 1", "specific phrase 2", "specific phrase 3", or needs guidance on domain-specific guidance.
+  
 每个技能必须包含 `SKILL.md` 文件，由两部分组成：
 
 **1. YAML Frontmatter（元数据）**

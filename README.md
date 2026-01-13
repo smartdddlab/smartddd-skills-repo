@@ -33,6 +33,7 @@ openskills install smartdddlab/smartddd-skills-repo
 |------|------|------|------|----------|
 | [uniapp](/uniapp/uniapp/) | v1.0.0 | ✅ 活跃 | 使用 Vue.js 开发所有前端应用的框架 | 跨平台开发（iOS/Android/Web/小程序）、组件、API、配置 |
 | [unicloud](/uniapp/unicloud/) | v1.0.0 | ✅ 活跃 | DCloud Serverless 云开发平台 | 云函数、云数据库、云存储、用户认证、支付 |
+| [hbuilderx](/uniapp/hbuilderx/) | v1.0.0 | ✅ 活跃 | DCloud 轻量级 IDE，专为 Vue 开发优化 | 插件开发、Vue 项目开发、多端开发支持、Markdown 编写 |
 
 详见 [uniapp 技能目录](/uniapp/)
 
@@ -86,6 +87,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-01-13 | 1.3.0 | 新增 HBuilderX 技能，支持 DCloud IDE 开发、插件开发、Vue 项目开发 |
 | 2026-01-11 | 1.2.0 | 添加 uniapp 和 uniCloud 技能，支持跨平台应用开发和 Serverless 云开发 |
 | 2026-01-06 | 1.1.0 | 添加 superclaude-invoker 技能，支持在 BMAD、spec-kit 等外部工具中动态调用 SuperClaude 命令 |
 | 2025-12-30 | 1.0.0 | 初始版本 |
