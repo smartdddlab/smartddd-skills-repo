@@ -1,6 +1,6 @@
 # Uniapp - Api
 
-**Pages:** 190
+**Pages:** 194
 
 ---
 
@@ -5204,6 +5204,56 @@ Example 4 (html):
 
 ---
 
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/worktile/auto/hbuilderx-cli-uniapp-test.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub工程化介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub概述Git/SVNcli 脚手架编译运行环境自动化测试快速开始APIHBuilderX自动化测试插件使用 CLI 运行uniapp自动化测试CLI项目运行自动化测试持续集成uniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号插件安装cli使用方法支持的平台参数说明uni-app 自动化测试依赖说明示例通过npm scripts使用CLI添加 npm 脚本支持使用npm命令查看日志#uniapp.test CLI 命令行工具文档插件市场HBuilderX uni-app自动化测试插件 4.1.0版本起，支持被HBuilderX CLI调用了。支持在命令行运行 uni-app (x) 自动化测试到 Web、微信小程序、Android、iOS 和 Harmony。关于HBuilderX cli命令基本介绍，请参考：https://hx.dcloud.net.cn/cli/README特别注意事项：运行HBuilderXcli uniapp.test前，请先确保HBuilderX uni-app自动化测试插件可以在HBuilderX内正常使用。#插件安装插件安装地址在插件市场，点击【导入插件】，会自动拉起本地安装的HBuilderX。#cli使用方法注意事项：使用CLI需要进入HBuilderX安装目录；在windows电脑，HBuilderX安装目录下调用cli命令要输入完整，具体为.\cli.exe以下是该工具的基本用法：// 查看帮助
+cli uniapp.test --help
+
+// 基本使用方法
+cli uniapp.test <platform> --project <ProjectPath>
+
+// windows电脑基本使用方法
+.\cli.exe uniapp.test <platform> --project <ProjectPath>示例源码如下，请查看 pre > code 标签中的内容// 查看帮助
+cli uniapp.test --help
+
+// 基本使用方法
+cli uniapp.test <platform> --project <ProjectPath>
+
+// windows电脑基本使用方法
+.\cli.exe uniapp.test <platform> --project <ProjectPath>#支持的平台Webweb-chrome：在 Chrome 浏览器中运行测试web-safari：在 Safari 浏览器中运行测试web-firefox：在 Firefox 浏览器中运行测试小程序mp-weixin：在微信小程序中运行测试移动应用app-android：在 Android 设备上运行测试app-ios-simulator：在 iOS 模拟器中运行测试app-harmony：在 Harmony 设备上运行测试#参数说明必需参数--project <ProjectPath>：指定项目的路径。可选参数--testcaseFile <testcase_file_path>：指定测试用例文件的路径（仅适用于app-harmony）。--device_id <id>：指定设备 ID（仅适用于app-harmony）。--help：显示命令帮助信息。--version：查看插件版本号。#uni-app 自动化测试依赖说明如果您没有安装自动化测试依赖，调用HBuilderX CLI测试时，会出现如下提示，请根据提示语进行操作。注意：playwright，依赖包体积很大（约1G左右），安装受限于网络、操作系统等环境，可能安装较慢。如果playwright安装遇到问题，请参考:https://playwright.dev/docs/intro#示例注意事项：请先在终端切换到HBuilderX安装目录，再运行以下命令。运行测试到chrome// Mac电脑
+/Applications/HBuilderX.app/Contents/MacOS/cli uniapp.test web-chrome--project/path/to/your/project
+
+// windows电脑
+D:\ide\HBuilderX\cli.exe uniapp.test web-chrome--project/path/to/your/project示例源码如下，请查看 pre > code 标签中的内容// Mac电脑
+/Applications/HBuilderX.app/Contents/MacOS/cli uniapp.test web-chrome --project /path/to/your/project
+
+// windows电脑
+D:\ide\HBuilderX\cli.exe uniapp.test web-chrome --project /path/to/your/project运行测试到微信开发者工具cli uniapp.test mp-weixin--project/path/to/your/project示例源码如下，请查看 pre > code 标签中的内容cli uniapp.test mp-weixin --project /path/to/your/project运行测试到Androidcli uniapp.test app-android--project/path/to/your/project示例源码如下，请查看 pre > code 标签中的内容cli uniapp.test app-android --project /path/to/your/project指定设备IDcli uniapp.test app-android--project/path/to/your/project--device_idfeyh2342343uos8ai89jr4p示例源码如下，请查看 pre > code 标签中的内容cli uniapp.test app-android --project /path/to/your/project --device_id feyh2342343uos8ai89jr4p运行特定的测试用例文件cli uniapp.test app-android--project/path/to/your/project--testcaseFilepages/index/index.test.js示例源码如下，请查看 pre > code 标签中的内容cli uniapp.test app-android --project /path/to/your/project --testcaseFile pages/index/index.test.js#通过npm scripts使用CLI我们需要在项目中安装@dcloudio/hbuilderx-cli,它是一个桥梁，让我们可以通过命令行来调用 HBuilderX 的强大功能（如启动测试流程）。#添加 npm 脚本支持# 首先，请确保你的项目根目录下有 package.json 文件。如果没有，可以通过以下命令快速生成：npminit-y# 然后，安装 hbuilderx-cli 作为开发依赖：npminstall@dcloudio/hbuilderx-cli --save-dev示例源码如下，请查看 pre > code 标签中的内容# 首先，请确保你的项目根目录下有 package.json 文件。如果没有，可以通过以下命令快速生成：
+npm init -y
+
+# 然后，安装 hbuilderx-cli 作为开发依赖：
+npm install @dcloudio/hbuilderx-cli --save-dev#使用npm命令查看日志# 在 Chrome 中测试npmrun test:web ----browserChrome# 在 Safari 中测试npmrun test:web ----browserSafari# 在连接的 Android 设备上测试 (默认会使用第一个android设备进行测试)npmrun test:app-android# 在 iOS 模拟器上测试 (默认会使用第一个iOS模拟器设备进行测试)npmrun test:app-ios# 在连接的 Harmony 设备上测试 (默认会使用第一个Harmony设备进行测试)npmrun test:app-harmony# 在指定的 Android 设备上测试 (需替换为你的设备ID)npmrun test:app-android ----udidyour_device_id示例源码如下，请查看 pre > code 标签中的内容# 在 Chrome 中测试
+npm run test:web -- --browser Chrome
+
+# 在 Safari 中测试
+npm run test:web -- --browser Safari
+
+# 在连接的 Android 设备上测试 (默认会使用第一个android设备进行测试)
+npm run test:app-android
+
+# 在 iOS 模拟器上测试 (默认会使用第一个iOS模拟器设备进行测试)
+npm run test:app-ios
+
+# 在连接的 Harmony 设备上测试 (默认会使用第一个Harmony设备进行测试)
+npm run test:app-harmony
+
+# 在指定的 Android 设备上测试 (需替换为你的设备ID)
+npm run test:app-android -- --udid your_device_id帮助我们改善此页面！上次更新:2026/1/8 11:26:36开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读插件安装cli使用方法支持的平台参数说明uni-app 自动化测试依赖说明示例通过npm scripts使用CLI添加 npm 脚本支持使用npm命令查看日志
+
+---
+
 ## uni.setStorage(OBJECT) @setstorage | uni-app官网
 
 **URL:** https://uniapp.dcloud.net.cn/api/storage/storage.html
@@ -7704,6 +7754,110 @@ uni.getBatteryInfo({
 
 ## uni-app官网
 
+**URL:** https://uniapp.dcloud.net.cn/worktile/auto/quick-start.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub工程化介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub概述Git/SVNcli 脚手架编译运行环境自动化测试快速开始APIHBuilderX自动化测试插件使用 CLI 运行uniapp自动化测试CLI项目运行自动化测试持续集成uniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号特性CLI测试插件测试工程目录说明测试用例文件规范测试用例文件编写示例测试配置文件jest.config.js注意事项测试示例展示全部#uni-app自动化测试uni-app提供了一批API，这些API可以操控uni-app应用，包括运行、跳转页面、触发点击等，并可以获取页面元素状态、进行截图，从而实现对uni-app项目进行自动化测试的目的。本功能使用到了业内常见的测试库如jest（MIT协议）。推荐使用方式：研发提交源码到版本库后，持续集成系统自动拉取源码，自动运行自动化测试。#特性开发者可以利用API做以下事情：控制跳转到指定页面获取页面数据获取页面元素状态触发元素绑定事件调用 uni 对象上任意接口平台差异说明AppH5微信小程序支付宝小程序百度小程序抖音小程序、飞书小程序QQ小程序快应用快手小程序京东小程序√(ios仅支持模拟器)√√xxxxxxx#CLI如果您想在终端命令行进行自动化测试、或使用持续集成进行测试。请使用uni-appCLI工程，CLI项目自动化测试教程使用HBuilderX cli调用uni-app自动化测试插件。文档#测试插件为了方便大家在HBuilderX内，进行uni-app自动化测试，开发了HBuilderX uni-app自动化测试插件。插件支持在HBuilderX内对uni-app普通项目、CLI项目进行自动化测试。插件简化了测试环境安装、测试用例创建、测试运行、测试设备选择等步骤。插件使用文档#测试工程目录说明如下所示，是一个标准的uni-app x项目测试工程目录介绍。.├── App.uvue
+├── env.js        // 此文件主要用于配置uni-app项目测试设备、测试基座路径等。当然你也可以把此文件的内容放置到jest.config.js testEnvironmentOptions节点下
+├── index.html
+├── jest.config.js  // 此文件允许你自定义和控制 Jest 的行为，比如指定测试文件的位置、配置测试环境、忽略某些目录等
+├── main.uts
+├── manifest.json
+├── pages
+│   └── index
+│       ├── index.test.js  // 测试用例文件。通常跟页面在同一级目录
+│       └── index.uvue
+├── pages.json
+├── static
+│   └── logo.png
+└── uni.scss示例源码如下，请查看 pre > code 标签中的内容.
+├── App.uvue
+├── env.js        // 此文件主要用于配置uni-app项目测试设备、测试基座路径等。当然你也可以把此文件的内容放置到jest.config.js testEnvironmentOptions节点下
+├── index.html
+├── jest.config.js  // 此文件允许你自定义和控制 Jest 的行为，比如指定测试文件的位置、配置测试环境、忽略某些目录等
+├── main.uts
+├── manifest.json
+├── pages
+│   └── index
+│       ├── index.test.js  // 测试用例文件。通常跟页面在同一级目录
+│       └── index.uvue
+├── pages.json
+├── static
+│   └── logo.png
+└── uni.scss#测试用例文件规范文件名通常为 *.test.js，便于 Jest 自动识别*.test.js 测试文件一般放在被测试文件同级，强烈建议放置到跟页面同一级目录每个测试用例应相互独立，避免依赖其他测试的执行结果遵守 Jest 语法规范，用法如：test('描述', () => { ... }) 或 it('描述', () => { ... })uni测试框架API文档#测试用例文件编写示例以下代码是一个简单的uni-app页面测试用例，使用page.$获取.title选择器的文本，然后进行断言。describe('test title',()=>{letpage;beforeAll(async()=>{page=awaitprogram.currentPage();awaitpage.waitFor(3000);});it('check page title',async()=>{constel=awaitpage.$('.title');// page.$(selector: string) 选择器(id、class、元素选择器)consttitleText=awaitel.text();expect(titleText).toEqual('Hello');});});示例源码如下，请查看 pre > code 标签中的内容describe('test title', () => {
+    let page;
+    beforeAll(async () => {
+        page = await program.currentPage();
+        await page.waitFor(3000);
+    });
+
+    it('check page title', async () => {
+        const el = await page.$('.title');   // page.$(selector: string) 选择器(id、class、元素选择器)
+        const titleText = await el.text();
+        expect(titleText).toEqual('Hello');
+    });
+});#测试配置文件#jest.config.js一个完整的jest.config.js文件，为测试配置文件，详细内容如下：module.exports={globalTeardown:'@dcloudio/uni-automator/dist/teardown.js',testEnvironment:'@dcloudio/uni-automator/dist/environment.js',testEnvironmentOptions:{compile:true,h5:{// 为了节省测试时间，可以指定一个 H5 的 url 地址，若不指定，每次运行测试，会先 npm run dev:h5url:"http://192.168.x.x:8080/h5/",options:{headless:false// 配置是否显示 puppeteer 测试窗口}},"app-plus":{// 需要安装 HBuilderXandroid:{appid:"",//自定义基座测试需配置manifest.json中的appidpackage:"",//自定义基座测试需配置Android包名executablePath:"HBuilderX/plugins/launcher/base/android_base.apk"// apk 目录或自定义调试基座包路径},ios:{id:"",// uuid 必须配置，目前仅支持模拟器，可以（xcrun simctl list）查看要使用的模拟器 uuidexecutablePath:"HBuilderX/plugins/launcher/base/Pandora_simulator.app"// ipa 目录}},"mp-weixin":{port:9420,// 默认 9420account:"",// 测试账号args:"",// 指定开发者工具参数cwd:"",// 指定开发者工具工作目录launch:true,// 是否主动拉起开发者工具teardown:"disconnect",// 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具remote:false,// 是否真机自动化测试executablePath:"",// 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli},"mp-baidu":{port:9430,// 默认9420// 其它配置项跟mp-weixin一样}},testTimeout:15000,reporters:['default'],watchPathIgnorePatterns:['/node_modules/','/dist/','/.git/'],moduleFileExtensions:['js','json'],rootDir:__dirname,testMatch:['<rootDir>/src/**/*test.[jt]s?(x)'],// 测试文件目录testPathIgnorePatterns:['/node_modules/']}示例源码如下，请查看 pre > code 标签中的内容module.exports = {
+	globalTeardown: '@dcloudio/uni-automator/dist/teardown.js',
+	testEnvironment: '@dcloudio/uni-automator/dist/environment.js',
+	testEnvironmentOptions: {
+		compile: true,
+		h5: { // 为了节省测试时间，可以指定一个 H5 的 url 地址，若不指定，每次运行测试，会先 npm run dev:h5
+			url: "http://192.168.x.x:8080/h5/",
+			options: {
+				headless: false // 配置是否显示 puppeteer 测试窗口
+			}
+		},
+		"app-plus": { // 需要安装 HBuilderX
+			android: {
+				appid: "", //自定义基座测试需配置manifest.json中的appid
+				package: "", //自定义基座测试需配置Android包名
+				executablePath: "HBuilderX/plugins/launcher/base/android_base.apk" // apk 目录或自定义调试基座包路径
+			},
+			ios: {
+				id: "", // uuid 必须配置，目前仅支持模拟器，可以（xcrun simctl list）查看要使用的模拟器 uuid
+				executablePath: "HBuilderX/plugins/launcher/base/Pandora_simulator.app" // ipa 目录
+			}
+		},
+		"mp-weixin": {
+			port: 9420, // 默认 9420
+			account: "", // 测试账号
+			args: "", // 指定开发者工具参数
+			cwd: "", // 指定开发者工具工作目录
+			launch: true, // 是否主动拉起开发者工具
+			teardown: "disconnect", // 可选值 "disconnect"|"close" 运行测试结束后，断开开发者工具或关闭开发者工具
+			remote: false, // 是否真机自动化测试
+			executablePath: "", // 开发者工具cli路径，默认会自动查找,  windows: C:/Program Files (x86)/Tencent/微信web开发者工具/cli.bat", mac: /Applications/wechatwebdevtools.app/Contents/MacOS/cli
+		},
+		"mp-baidu": {
+			port: 9430, // 默认9420
+            // 其它配置项跟mp-weixin一样
+		}
+	},
+	testTimeout: 15000,
+	reporters: [
+		'default'
+	],
+	watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
+	moduleFileExtensions: ['js', 'json'],
+	rootDir: __dirname,
+	testMatch: ['<rootDir>/src/**/*test.[jt]s?(x)'], // 测试文件目录
+	testPathIgnorePatterns: ['/node_modules/']
+}#注意事项如果页面涉及到分包加载问题，reLaunch获取的页面路径可能会出现问题 ，解决方案如下 ：// 重新 reLaunch至首页，并获取 page 对象（其中 program 是 uni-automator 自动注入的全局对象）page=awaitprogram.reLaunch('/pages/extUI/calendar/calendar')// 微信小程序如果是分包页面，需要延迟大概 7s 以上，保证可以正确获取page对象awaitpage.waitFor(7000)page=awaitprogram.currentPage()示例源码如下，请查看 pre > code 标签中的内容// 重新 reLaunch至首页，并获取 page 对象（其中 program 是 uni-automator 自动注入的全局对象）
+page = await program.reLaunch('/pages/extUI/calendar/calendar')
+// 微信小程序如果是分包页面，需要延迟大概 7s 以上，保证可以正确获取page对象
+await page.waitFor(7000)
+page = await program.currentPage()微信小程序 element 不能跨组件选择元素，首先要先获取当前组件，再继续查找<uni-tag><viewclass="test"></view></uni-tag>示例源码如下，请查看 pre > code 标签中的内容<uni-tag>
+  <view class="test"></view>
+</uni-tag>// 错误，取不到元素awaitpage.$('.test')// 可以取到元素lettag=awaitpage.$('uni-tag')awaittag.$('.test')示例源码如下，请查看 pre > code 标签中的内容// 错误，取不到元素
+await page.$('.test')
+
+// 可以取到元素
+let tag = await page.$('uni-tag')
+await tag.$('.test')微信小程序暂不支持父子选择器百度小程序选择元素必须有事件的元素才能被选中，否则提示元素不存在分包中的页面，打开之后要延迟时间长一点，否则不能正确获取到页面信息App-android自定义基座测试需要在jest.config.js文件android节点下配置appid（manifest.json中的appid）、package（包名）、executablePath（自定义调试基座包路径）#测试示例GitHub：https://github.com/dcloudio/hello-uniapp#更新记录HBuilderX 4.13支持page.data获取defineExpose暴露的数据帮助我们改善此页面！上次更新:2026/1/8 11:26:36开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读特性CLI测试插件测试工程目录说明测试用例文件规范测试用例文件编写示例测试配置文件jest.config.js注意事项测试示例更新记录
+
+---
+
+## uni-app官网
+
 **URL:** https://uniapp.dcloud.net.cn/uts/buildin-object-api/number.html
 
 **Contents:**
@@ -8251,6 +8405,114 @@ uni.writeBLECharacteristicValue({
   }
 })
 ```
+
+---
+
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/worktile/auto/hbuilderx-extension/index.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub工程化介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub概述Git/SVNcli 脚手架编译运行环境自动化测试快速开始APIHBuilderX自动化测试插件使用 CLI 运行uniapp自动化测试CLI项目运行自动化测试持续集成uniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号插件说明测试注意事项插件安装测试环境安装uni-app普通项目uniapp-cli项目创建测试用例测试运行测试平台说明选择测试平台展示全部#自动化测试插件#插件说明本插件，用于在HBuilderX内运行uni-app自动化测试，支持H5、微信小程序、Android、iOS、Harmony自动化测试。主要功能有：初始化测试环境（创建测试配置文件、以及安装测试所需的环境）运行测试 (运行项目下所有测试用例、运行某一个测试用例)新建测试用例 （uni-app pages页面，右键菜单【新建测试用例】）查看历史测试报告 （HBuilderX顶部运行菜单）#测试注意事项本插件支持uni-app普通项目和uniapp-cli项目。uniapp-cli项目，运行自动化测试，需要在当前项目下安装自动化测试依赖。Windows电脑不支持运行测试到ios手机。MacOSX电脑，仅支持运行测试到iOS模拟器，不支持ios真机，测试iOS模拟器，需要电脑装安装XCode。运行测试到H5，仅支持chrome浏览器，不支持其它浏览器。运行测试到Android手机，如果HBuilderX仅检测到一个android设备，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。node: 当本机未安装node时，将使用HBuilderX内置node运行测试。反之，本机安装了node，则使用本机的node。运行测试到微信小程序，必须在manifest.json内，配置微信小程序 appid。如果微信开发者工具无法成功打开项目，首次请手动打开。#插件安装插件安装地址如下图所示，在插件市场，进入插件详情页，点击【导入插件】，会自动拉起本地安装的HBuilderX。特别注意：插件安装，依赖HBuilderX 终端插件。#测试环境安装插件依赖：H5、微信、ios、android自动化测试依赖puppeteer、adbkit、node-simctl、jest、playwright，运行插件时，如果未安装此依赖，将会弹窗自动安装。注意：本插件0.0.3版本及以下，node: 当本机未安装node时，将使用HBuilderX内置的node运行测试。反之，本机安装了node，则使用本机的node。注意：本插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译特别注意：uni-app普通项目，需要通过插件hbuilderx-for-uniapp-test来安装测试环境。uniapp-cli项目，只需在项目下安装相关测试依赖即可。详情#uni-app普通项目uni-app普通项目，初始化测试环境或运行测试时，如果未安装相关依赖，会自动安装。如下图所示，项目管理器，选中项目，右键菜单【初始化测试环境】注意：安装环境依赖时，如果检测到项目下不存在测试配置文件env.js和jest.config.js，则会自动创建测试配置文件。#uniapp-cli项目uniapp-cli项目，自动化测试运行，将使用项目下的依赖库。打开命令行，进入项目目录，输入如下命令进行安装:npminstall--savecross-env puppeteer adbkit node-simctl jest playwright @playwright/test示例源码如下，请查看 pre > code 标签中的内容npm install --save cross-env puppeteer adbkit node-simctl jest playwright @playwright/test#创建测试用例uni-app项目，pages页面，右键菜单，创建测试用例#测试运行创建测试用例之后，选中项目，右键菜单【运行uni-app自动化测试】，选择运行平台，即可开始运行测试。注意：如果要运行指定的测试用例，请在项目管理器选中要运行的用例，右键菜单【运行当前测试用例】#测试平台说明Windows电脑不支持运行测试到ios手机MacOSX电脑，仅支持运行测试到ios模拟器，不支持ios真机。运行测试到H5，仅支持chrome浏览器，不支持其它浏览器。运行测试到Android手机，如果HBuilderX仅检测到一个android设备，直接运行测试到当前已连接设备。多个设备时，会弹窗要求选择手机。#选择测试平台如下图所示，运行测试时，支持选择对应平台。#选择设备如果无法获取到设备信息，请参考#插件配置点击菜单【设置】【插件配置】，找到hbuilderx-for-uniapp-test项，即可看到设置项。如上图支持自定义测试报告路径。自动修改jest.config.js文件中的testMatch，默认为true。去掉勾选后，将不再自动修改testMatch。插件0.0.4+版本，新增配置项 支持自定义设置使用何种node版本进行uni-app编译。即您可以选择使用HBuilderX内置的Node、还是使用操作系统安装的Node进行uni-app编译。#如何编写测试用例uni-app自动化测试，使用了业内常见的jest测试库。uni-app项目，pages目录下，右键菜单【创建测试用例】，选择模板。测试用例文件名，必须为xxx.test.js测试用例编写，请遵循jest规范。#jest用例解析下面将使用一个最简单的示例，来讲解测试用例的组成。describe表示一组用例, decribe会形成一个作用域it测试函数test测试函数，类似itexpect匹配器。使用文档# 求和测试functionsum(a,b){returna+b;};describe("sum test",()=>{it('adds 1 + 2 to equal 3',()=>{expect(sum(1,2)).toBe(3);});test('adds 1 + 1 to equal 3',()=>{expect(sum(1,1)).toBe(3);});})示例源码如下，请查看 pre > code 标签中的内容# 求和测试
+function sum(a, b) {
+    return a + b;
+};
+
+describe("sum test", () => {
+    it('adds 1 + 2 to equal 3', () => {
+        expect(sum(1, 2)).toBe(3);
+    });
+    test('adds 1 + 1 to equal 3', () => {
+        expect(sum(1, 1)).toBe(3);
+    });
+})#uni-app页面用例示例以uni-app【默认模板】index页面为例。编写测试用例，检查index.vue页面，标题是否为Hellodescribe('test title',()=>{letpage;beforeAll(async()=>{page=awaitprogram.currentPage();awaitpage.waitFor(3000);});it('check page title',async()=>{constel=awaitpage.$('.title');consttitleText=awaitel.text();expect(titleText).toEqual('Hello');});});示例源码如下，请查看 pre > code 标签中的内容describe('test title', () => {
+    let page;
+    beforeAll(async () => {
+        page = await program.currentPage();
+        await page.waitFor(3000);
+    });
+
+    it('check page title', async () => {
+        const el = await page.$('.title');
+        const titleText = await el.text();
+        expect(titleText).toEqual('Hello');
+    });
+});扩展：如上测试代码中，使用了beforeAll函数，它用于在所有测试之前执行。了解jest更多钩子函数#Setup and Teardown通常在编写测试时，您需要在测试运行之前进行一些设置工作，并且在测试运行之后需要进行一些完成工作。可以使用Jest的钩子函数来解决这个问题.jest中有4个钩子函数beforeAll：所有测试之前执行afterAll：所有测试执行完之后beforeEach：每个测试实例之前执行afterEach：每个测试实例完成之后执行文档扩展:jest setup-teardown#钩子函数的执行顺序用下列代码，我们来查看一下函数执行顺序describe('test Run Sequence',()=>{beforeAll(()=>{console.log('1 - beforeAll');});afterAll(()=>{console.log('1 - afterAll');});beforeEach(()=>{console.log('1 - beforeEach');});afterEach(()=>{console.log('1 - afterEach');});test('test',()=>{console.log('1 - test')});});示例源码如下，请查看 pre > code 标签中的内容describe('test Run Sequence', () => {
+    beforeAll(() => {
+        console.log('1 - beforeAll');
+    });
+    afterAll(() => {
+        console.log('1 - afterAll');
+    });
+    beforeEach(() => {
+        console.log('1 - beforeEach');
+    });
+    afterEach(() => {
+        console.log('1 - afterEach');
+    });
+    test('test', () => {
+        console.log('1 - test')
+    });
+});运行结果test Run Sequence
+    ✓test(4ms)console.log1-beforeAll
+
+  console.log1-beforeEach
+
+  console.log1-test
+
+  console.log1-afterEach
+
+  console.log1-afterAll
+
+Test Suites:1passed,1totalTests:1passed,1totalSnapshots:0totalTime:0.454s示例源码如下，请查看 pre > code 标签中的内容test Run Sequence
+    ✓ test (4 ms)
+
+  console.log
+    1 - beforeAll
+
+  console.log
+    1 - beforeEach
+
+  console.log
+    1 - test
+
+  console.log
+    1 - afterEach
+
+  console.log
+    1 - afterAll
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        0.454 s#内置Jest代码块为了更快速的编写测试用例，本插件内置了jest部分代码块prefix代码块describedescribe('', () => {});testtest('', () => {});tatest('', async () => {await});beforeAllbeforeAll(() => {});afterEachafterEach(() => {});afterAllafterAll(() => {});beforeAllbeforeAll(() => {});#env.js提醒：下面关于env.js的介绍，大部分情况下，自动化测试插件会自动修改，无需您手动调整。如果不确定，请勿修改。通常，测试项目下有个测试配置文件env.js，内容如下:module.exports={// is-custom-runtime = true，修改env.js时，将不会使用标准基座路径，替代env.js中已配置的android、ios基座路径。"is-custom-runtime":false,"UNI_TEST_CUSTOM_ENV":{// 自动化测试插件 1.9.0版本新增`UNI_TEST_CUSTOM_ENV`"xx":"xx"},"compile":true,"h5":{// 此处省略........},"mp-weixin":{// 此处省略........},"app-plus":{// 此处省略........}}示例源码如下，请查看 pre > code 标签中的内容module.exports = {
+	// is-custom-runtime = true，修改env.js时，将不会使用标准基座路径，替代env.js中已配置的android、ios基座路径。
+    "is-custom-runtime": false,
+    "UNI_TEST_CUSTOM_ENV": {
+		// 自动化测试插件 1.9.0版本新增`UNI_TEST_CUSTOM_ENV`
+		"xx": "xx"
+    },
+    "compile": true,
+    "h5": {
+        // 此处省略........
+    },
+    "mp-weixin": {
+		// 此处省略........
+    },
+    "app-plus": {
+        // 此处省略........
+    }
+}#env.js UNI_TEST_CUSTOM_ENV提示：大部分场景下，您不会用到UNI_TEST_CUSTOM_ENV。修改请慎重。下面将对UNI_TEST_CUSTOM_ENV做介绍。自动化测试插件 1.9.0版本新增UNI_TEST_CUSTOM_ENV, 用于读取自定义环境变量，并传递给uniapp自动化测试框架命令行。后期会随时扩充新的key。{"UNI_TEST_CUSTOM_ENV":{// APPID 用于测试自定义基座"UNI_TEST_BASE_APPID":"__UNI__xxxxxxxx",// 基座包名 用于测试自定义基座"UNI_TEST_BASE_PACKAGE_NAME":"io.xxx.xxx"}}示例源码如下，请查看 pre > code 标签中的内容{
+	"UNI_TEST_CUSTOM_ENV": {
+		// APPID 用于测试自定义基座 
+		"UNI_TEST_BASE_APPID": "__UNI__xxxxxxxx",
+		// 基座包名 用于测试自定义基座
+		"UNI_TEST_BASE_PACKAGE_NAME": "io.xxx.xxx"
+	}
+}#多个HBuilderX时，如何共用一个测试依赖？场景：电脑上安装了HBuilderX 正式版、Dev、Alpha版本，每个程序plugins目录都重新安装一遍测试依赖？答案：不需要。解决方案：进入HBuilderX安装目录，将plugins目录下的hbuilderx-for-uniapp-test-lib目录，拷贝到电脑其它目录。拷贝后，在命令行进入上面的拷贝目录下，执行npm install打开HBuilderX菜单【设置】【源码视图】，增加配置项:{
+	"hbuilderx-for-uniapp-test.customTestEnvironmentDependencyDir" : "自定义的测试依赖node_modules路径，路径必须以node_modules结尾"
+}示例源码如下，请查看 pre > code 标签中的内容{
+	"hbuilderx-for-uniapp-test.customTestEnvironmentDependencyDir" : "自定义的测试依赖node_modules路径，路径必须以node_modules结尾"
+}帮助我们改善此页面！上次更新:2026/1/8 11:26:36开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读插件说明测试注意事项插件安装测试环境安装uni-app普通项目uniapp-cli项目创建测试用例测试运行测试平台说明选择测试平台选择设备插件配置如何编写测试用例jest用例解析uni-app页面用例示例Setup and Teardown钩子函数的执行顺序内置Jest代码块env.jsenv.js UNITESTCUSTOM_ENV多个HBuilderX时，如何共用一个测试依赖？
 
 ---
 
@@ -13475,6 +13737,99 @@ Example 2 (javascript):
 ```javascript
 console.log(": " + );
 ```
+
+---
+
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/worktile/auto/api.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub工程化介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub概述Git/SVNcli 脚手架编译运行环境自动化测试快速开始APIHBuilderX自动化测试插件使用 CLI 运行uniapp自动化测试CLI项目运行自动化测试持续集成uniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号Uni 测试框架 APIprogram方法Page属性方法page.scrollTopElement属性方法展示全部#API#Uni 测试框架 API#programprogram 是uni-automator自动注入的全局对象#方法#program.pageStack获取页面堆栈。program.pageStack(): Promise<Page[]>#program.navigateTo保留当前页面，跳转到应用内的某个页面，同uni.navigateTo。program.navigateTo(url: string): Promise<Page>字段类型必填默认值说明urlstring是-需要跳转的应用内非 tabBar 的页面的路径示例代码：constpage=awaitprogram.navigateTo('/pages/index/index')console.log(page.path)// -> 'page/index/index'示例源码如下，请查看 pre > code 标签中的内容const page = await program.navigateTo('/pages/index/index')
+  console.log(page.path)// -> 'page/index/index'#program.redirectTo关闭当前页面，跳转到应用内的某个页面，同uni.redirectTo。program.redirectTo(url: string): Promise<Page>字段类型必填默认值说明urlstring是-需要跳转的应用内非 tabBar 的页面的路径#program.navigateBack关闭当前页面，返回上一页面或多级页面，同uni.navigateBack。program.navigateBack(): Promise<Page>#program.reLaunch关闭所有页面，打开到应用内的某个页面，同uni.reLaunch。program.reLaunch(url: string): Promise<Page>字段类型必填默认值说明urlstring是-需要跳转的应用内页面路径#program.switchTab跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面，同uni.switchTab。program.switchTab(url: string): Promise<Page>字段类型必填默认值说明urlstring是-需要跳转的 tabBar 页面的路径#program.currentPage获取当前页面。program.currentPage(): Promise<Page>#program.systemInfo获取系统信息，同uni.getSystemInfo。program.systemInfo(): Promise<Object>示例代码：constsystemInfo=awaitprogram.systemInfo()if(systemInfo.uniPlatform==='devtools'){// Do something}示例源码如下，请查看 pre > code 标签中的内容const systemInfo = await program.systemInfo()
+	if (systemInfo.uniPlatform === 'devtools') {
+		// Do something
+	}#program.pageScrollTo将页面滚动到目标位置，同uni.pageScrollTo。program.pageScrollTo(scrollTop: number): Promise<void>字段类型必填默认值说明scrollTopnumber是-滚动到页面的目标位置，单位 px示例代码：constpage=awaitprogram.currentPage()awaitprogram.pageScrollTo(20)console.log(awaitpage.scrollTop())示例源码如下，请查看 pre > code 标签中的内容const page = await program.currentPage()
+   await program.pageScrollTo(20)
+   console.log(await page.scrollTop())#program.callUniMethod调用 uni 对象上的指定方法。program.callUniMethod(method: string, ...args: any[]): Promise<any>字段类型必填默认值说明methodstring是-需要调用的方法名...argsarray<any>否-方法参数调用异步方法时无需传入 success 及 fail 回调函数。示例代码：awaitprogram.callUniMethod('setStorage',{key:'test',data:'123456'})constdata=awaitprogram.callUniMethod('getStorageSync','test')console.log(data)// -> '123456'示例源码如下，请查看 pre > code 标签中的内容await program.callUniMethod('setStorage', {
+	  key: 'test',
+	  data: '123456'
+	})
+	const data = await program.callUniMethod('getStorageSync', 'test')
+	console.log(data) // -> '123456'#program.screenshot对当前页面截图。微信小程序只有开发者工具模拟器支持，客户端无法使用。program.screenshot(options?: Object): Promise<string | void>字段类型必填默认值说明optionsObject否-截图选项如果不传 options，该方法返回图片数据的 base64 编码。options 字段定义如下：字段类型必填默认值说明pathstring是-图片保存路径it('screenshot',async()=>{awaitprogram.screenshot({path:"static/screenshot.png"// 默认项目根目录})});示例源码如下，请查看 pre > code 标签中的内容it('screenshot', async () => {
+		await program.screenshot({
+			path: "static/screenshot.png" // 默认项目根目录
+		})
+	});#program.mockUniMethod覆盖 uni 对象上指定方法的调用结果。利用该接口，你可以很方便地直接指定uni.chooseLocation等调用系统组件的返回结果。program.mockUniMethod(method: string, result: any): Promise<void>参数说明字段类型必填默认值说明methodstring是-需要覆盖的方法名resultany是-指定调用结果program.mockUniMethod(method: string, fn: Function | string, ...args: any[]): Promise<void>参数说明字段类型必填默认值说明methodstring是-需要覆盖的方法名fnFunction string是-处理返回函数...argsarray<any>否-传入参数fn 同 program.evaluate 的 appFunction 参数一样，无法使用闭包来引用外部变量。此外，你还可以在方法内使用 this.origin 来调用原始方法。示例代码：awaitprogram.mockUniMethod('showModal',{confirm:true,cancel:false})awaitprogram.mockUniMethod('getStorageSync',function(key,defVal){if(key==='name')return'redhoodsu'if(key==='sex')return'male'returndefVal},'unknown',)// 调用 uni.getStorageSync('name') 返回 'redhoodsu'// 更改 getSystemInfo 中的 platform 字段awaitprogram.mockUniMethod('getSystemInfo',function(obj,platform){returnnewPromise(resolve=>{// origin 指向原始方法this.origin({success(res){res.platform=platformresolve(res)},})})},'test',)示例源码如下，请查看 pre > code 标签中的内容await program.mockUniMethod('showModal', {
+		confirm: true,
+		cancel: false
+	})
+
+	await program.mockUniMethod(
+		'getStorageSync',
+		function(key, defVal) {
+			if (key === 'name') return 'redhoodsu'
+			if (key === 'sex') return 'male'
+			return defVal
+		},
+		'unknown',
+  )
+  // 调用 uni.getStorageSync('name') 返回 'redhoodsu'
+
+  // 更改 getSystemInfo 中的 platform 字段
+	await program.mockUniMethod(
+		'getSystemInfo',
+		function(obj, platform) {
+			return new Promise(resolve => {
+				// origin 指向原始方法
+				this.origin({
+					success(res) {
+						res.platform = platform
+						resolve(res)
+					},
+				})
+			})
+		},
+		'test',
+	)#program.restoreUniMethod重置 uni 指定方法，消除 mockUniMethod 调用的影响。program.restoreUniMethod(method: string): Promise<void>字段类型必填默认值说明methodstring是-需要覆盖的方法名示例代码:console.log(awaitprogram.callUniMethod('getStorageSync','test'))// -> ''awaitprogram.mockUniMethod('getStorageSync','mockValue')console.log(awaitprogram.callUniMethod('getStorageSync','test'))// -> 'mockValue'awaitprogram.restoreUniMethod('getStorageSync')console.log(awaitprogram.callUniMethod('getStorageSync','test'))// -> ''示例源码如下，请查看 pre > code 标签中的内容console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''
+	await program.mockUniMethod('getStorageSync', 'mockValue')
+	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> 'mockValue'
+	await program.restoreUniMethod('getStorageSync')
+	console.log(await program.callUniMethod('getStorageSync', 'test')) // -> ''#program.evaluate注入代码片段并返回执行结果。（仅微信小程序支持）program.evaluate(appFunction: Function | string, ...args: any[]): Promise<any>字段类型必填默认值说明appFunctionFunction string是-代码片段...argsarray<any>否-执行时传入参数appFunction 最终会被序列化传递到开发者工具，因此你无法在函数中利用闭包来引用外部变量。也就是说，传递 function () {} 函数事实上等同于传递其字符串。示例代码：letsystemInfo=awaitprogram.evaluate(()=>{returnnewPromise(resolve=>{uni.getSystemInfo({success(result){resolve(result)}})})})systemInfo=awaitprogram.evaluate(()=>{returnuni.getSystemInfoSync()})console.log(systemInfo)awaitprogram.evaluate(key=>{uni.setStorageSync(key,'test')},'test')consthasLogin=awaitprogram.evaluate(()=>getApp().globalData.hasLogin)console.log(hasLogin)示例源码如下，请查看 pre > code 标签中的内容let systemInfo = await program.evaluate(() => {
+		return new Promise(resolve => {
+			uni.getSystemInfo({
+				success(result) {
+					resolve(result)
+				}
+			})
+		})
+	})
+	systemInfo = await program.evaluate(() => {
+		return uni.getSystemInfoSync()
+	})
+	console.log(systemInfo)
+	await program.evaluate(key => {
+		uni.setStorageSync(key, 'test')
+	}, 'test')
+	const hasLogin = await program.evaluate(() => getApp().globalData.hasLogin)
+	console.log(hasLogin)#program.testAccounts获取多账号调试中已添加的用户列表。（仅微信小程序支持）program.testAccounts(): Promise<Account[]>Account 字段定义如下：字段类型说明nickNamestring用户昵称openidstring账号 openid示例代码：consttestAccounts=awaitprogram.testAccounts()for(leti=0,len=testAccounts.length;i<len;i++){constminiProgram=awaitautomator.launch({projectPath:'path/to/project',account:testAccounts[i].openid})// 控制多个用户登录的不同小程序}示例源码如下，请查看 pre > code 标签中的内容const testAccounts = await program.testAccounts()
+	for (let i = 0, len = testAccounts.length; i < len; i++) {
+		const miniProgram = await automator.launch({
+			projectPath: 'path/to/project',
+			account: testAccounts[i].openid
+		})
+		// 控制多个用户登录的不同小程序
+	}#program.exposeFunction在全局暴露方法，供小程序侧调用测试脚本中的方法（仅微信小程序支持）program.exposeFunction(name: string, bindingFunction: Function): Promise<void>字段类型必填默认值说明namestring是-全局方法名bindingFunctionFunction是-脚本方法你可以利用该方法来监听事件，不支持在小程序侧获取调用结果。示例代码：awaitprogram.exposeFunction('onAppShow',options=>{// Do something...})awaitprogram.evaluate(function(){uni.onAppShow(function(options){onAppShow(options)})})示例源码如下，请查看 pre > code 标签中的内容await program.exposeFunction('onAppShow', options => {
+		// Do something... 
+	})
+	await program.evaluate(function() {
+		uni.onAppShow(function(options) {
+			onAppShow(options)
+		})
+	})#PagePage 模块提供了控制页面的方法。#属性#page.path页面路径。page.path: string#page.query页面参数。page.query: Object#方法#page.$获取页面元素。page.$(selector: string): Promise<Element>参数说明字段类型必填默认值说明selectorstring是-选择器(id、class、元素选择器)示例代码：constpage=awaitprogram.currentPage()constelement=awaitpage.$('.index-desc')console.log(element.tagName)// 'view'示例源码如下，请查看 pre > code 标签中的内容const page = await program.currentPage()
+  const element = await page.$('.index-desc')
+  console.log(element.tagName) // 'view'#page.$$获取页面元素数组。page.$$(selector: string): Promise<Element[]>参数说明字段类型必填默认值说明selectorstring是-选择器(id、class、元素选择器)该方法跟 $ 一样均无法选择自定义组件内的元素，请使用 element.$。示例代码：constpage=awaitprogram.currentPage()constelements=awaitpage.$$('.list-text')console.log(elements.length)示例源码如下，请查看 pre > code 标签中的内容const page = await program.currentPage()
+  const elements = await page.$$('.list-text')
+  console.log(elements.length)#page.waitFor等待直到指定条件成立。page.waitFor(condition: string | num
 
 ---
 

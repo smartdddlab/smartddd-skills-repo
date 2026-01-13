@@ -78,10 +78,13 @@ This skill includes comprehensive documentation in `references/`:
 - **api.md** - Api documentation
 - **collocation.md** - Collocation documentation
 - **component.md** - Component documentation
+- **dev.md** - Dev documentation
+- **hybrid.md** - Hybrid documentation
 - **introduction.md** - Introduction documentation
 - **other.md** - Other documentation
 - **plugin.md** - Plugin documentation
 - **tutorial.md** - Tutorial documentation
+- **uni_ad.md** - Uni Ad documentation
 - **uts.md** - Uts documentation
 - **worktile.md** - Worktile documentation
 

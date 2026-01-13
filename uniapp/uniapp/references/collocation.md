@@ -1,6 +1,6 @@
 # Uniapp - Collocation
 
-**Pages:** 65
+**Pages:** 74
 
 ---
 
@@ -52,6 +52,100 @@ uni.authorize({
     }
 })
 ```
+
+---
+
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/vue-config.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号vue.config.js 是一个可选的配置文件，如果项目的根目录中存在这个文件，那么它会被自动加载，一般用于配置 webpack 等编译选项，具体规范参考：vue.config.js支持情况CLI 工程HBuilderX 2.1.5 及以上版本注意事项仅vue页面生效部分配置项会被编译配置覆盖，例如：publicPath  不支持，如果需要配置，请在 manifest.json->h5->router->base 中配置，参考文档：h5-routeroutputDir  不支持assetsDir 固定 staticpages  不支持runtimeCompiler 固定 falseproductionSourceMap 固定 falsecss.extract  H5 平台固定 false，其他平台固定 trueparallel 固定 false使用cli项目时，默认情况下 babel-loader 会忽略所有 node_modules 中的文件。如果你想要通过 Babel 显式转译一个依赖，可以在transpileDependencies中列出来。详情参考使用示例自定义静态资源目录constpath=require('path')constCopyWebpackPlugin=require('copy-webpack-plugin')//最新版本copy-webpack-plugin插件暂不兼容，推荐v5.0.0module.exports={configureWebpack:{plugins:[newCopyWebpackPlugin([{from:path.join(__dirname,'src/images'),to:path.join(__dirname,'dist',process.env.NODE_ENV==='production'?'build':'dev',process.env.UNI_PLATFORM,'images')}])]}}示例源码如下，请查看 pre > code 标签中的内容const path = require('path')
+const CopyWebpackPlugin = require('copy-webpack-plugin') //最新版本copy-webpack-plugin插件暂不兼容，推荐v5.0.0
+
+module.exports = {
+	configureWebpack: {
+		plugins: [
+			new CopyWebpackPlugin([
+				{
+					from: path.join(__dirname, 'src/images'),
+					to: path.join(__dirname, 'dist', process.env.NODE_ENV === 'production' ? 'build' : 'dev', process.env.UNI_PLATFORM, 'images')
+				}
+			])
+		]
+	}
+}注入全局依赖// 示例从插件市场下载 mp-storageconstwebpack=require('webpack')module.exports={configureWebpack:{plugins:[newwebpack.ProvidePlugin({'localStorage':['mp-storage','localStorage'],'window.localStorage':['mp-storage','localStorage']})]}}示例源码如下，请查看 pre > code 标签中的内容// 示例从插件市场下载 mp-storage
+const webpack = require('webpack')
+
+module.exports = {
+	configureWebpack: {
+		plugins: [
+			new webpack.ProvidePlugin({
+				'localStorage': ['mp-storage', 'localStorage'],
+				'window.localStorage': ['mp-storage', 'localStorage']
+			})
+		]
+	}
+}配置环境变量constwebpack=require('webpack')module.exports={chainWebpack:config=>{config.plugin('define').tap(args=>{args[0]['process.env'].VUE_APP_TEST='"test"'returnargs})}}示例源码如下，请查看 pre > code 标签中的内容const webpack = require('webpack')
+
+module.exports = {
+  chainWebpack: config => {
+    config
+      .plugin('define')
+      .tap(args => {
+        args[0]['process.env'].VUE_APP_TEST = '"test"'
+        return args
+      })
+  }
+}发布时删除consoleHBuilderX 2.6.8+支持module.exports={chainWebpack:(config)=>{// 发行或运行时启用了压缩时会生效config.optimization.minimizer('terser').tap((args)=>{constcompress=args[0].terserOptions.compress// 非 App 平台移除 console 代码(包含所有 console 方法，如 log,debug,info...)compress.drop_console=truecompress.pure_funcs=['__f__',// App 平台 vue 移除日志代码// 'console.debug' // 可移除指定的 console 方法]returnargs})}}示例源码如下，请查看 pre > code 标签中的内容module.exports = {
+	chainWebpack: (config) => {
+		// 发行或运行时启用了压缩时会生效
+		config.optimization.minimizer('terser').tap((args) => {
+			const compress = args[0].terserOptions.compress
+			// 非 App 平台移除 console 代码(包含所有 console 方法，如 log,debug,info...)
+			compress.drop_console = true
+			compress.pure_funcs = [
+				'__f__', // App 平台 vue 移除日志代码
+				// 'console.debug' // 可移除指定的 console 方法
+			]
+			return args
+		})
+	}
+}发布时动态修改 manifest.json// 读取 manifest.json ，修改后重新写入constfs=require('fs')constmanifestPath='./src/manifest.json'letManifest=fs.readFileSync(manifestPath,{encoding:'utf-8'})functionreplaceManifest(path,value){constarr=path.split('.')constlen=arr.lengthconstlastItem=arr[len-1]leti=0letManifestArr=Manifest.split(/\n/)for(letindex=0;index<ManifestArr.length;index++){constitem=ManifestArr[index]if(newRegExp(`"${arr[i]}"`).test(item))++i;if(i===len){consthasComma=/,/.test(item)ManifestArr[index]=item.replace(newRegExp(`"${lastItem}"[\\s\\S]*:[\\s\\S]*`),`"${lastItem}":${value}${hasComma?',':''}`)break;}}Manifest=ManifestArr.join('\n')}// 使用replaceManifest('app-plus.usingComponents',false)replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender',false)replaceManifest('mp-baidu.usingComponents',false)fs.writeFileSync(manifestPath,Manifest,{"flag":"w"})module.exports={// ...}示例源码如下，请查看 pre > code 标签中的内容// 读取 manifest.json ，修改后重新写入
+const fs = require('fs')
+
+const manifestPath = './src/manifest.json'
+let Manifest = fs.readFileSync(manifestPath, { encoding: 'utf-8' })
+function replaceManifest(path, value) {
+  const arr = path.split('.')
+  const len = arr.length
+  const lastItem = arr[len - 1]
+
+  let i = 0
+  let ManifestArr = Manifest.split(/\n/)
+
+  for (let index = 0; index < ManifestArr.length; index++) {
+    const item = ManifestArr[index]
+    if (new RegExp(`"${arr[i]}"`).test(item)) ++i;
+    if (i === len) {
+      const hasComma = /,/.test(item)
+      ManifestArr[index] = item.replace(new RegExp(`"${lastItem}"[\\s\\S]*:[\\s\\S]*`), `"${lastItem}": ${value}${hasComma ? ',' : ''}`)
+      break;
+    }
+  }
+
+  Manifest = ManifestArr.join('\n')
+}
+// 使用
+replaceManifest('app-plus.usingComponents', false)
+replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender', false)
+replaceManifest('mp-baidu.usingComponents', false)
+fs.writeFileSync(manifestPath, Manifest, {
+  "flag": "w"
+})
+
+module.exports = {
+	// ...
+}启用压缩的方法：HBuilderX创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码cli创建的项目可以在package.json中添加参数--minimize，示例："dev:mp-weixin": "cross-env NODE_ENV=development UNI_PLATFORM=mp-weixin vue-cli-service uni-build --watch --minimize"帮助我们改善此页面！上次更新:2022/6/10 20:28:04开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读
 
 ---
 
@@ -2500,6 +2594,39 @@ this.value[0] = 0
 
 ---
 
+## App.vue/App.uvue | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/App.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号应用生命周期globalData全局样式#App.vue/App.uvueApp.vue/uvue是uni-app的主组件。uni-app js引擎版是app.vue。uni-app x是app.uvue。以下出现的app.vue一般泛指包含了app.uvue所有页面都是在App.vue下进行切换的，是应用入口文件。但App.vue本身不是页面，这里不能编写视图元素，也就是没有<template>。这个文件的作用包括：监听应用生命周期、配置全局样式、配置全局的存储globalData应用生命周期仅可在App.vue中监听，在页面监听无效。#应用生命周期uni-app支持如下应用生命周期函数：函数名说明平台兼容onLaunch当uni-app初始化完成时触发（全局只触发一次），参数为应用启动参数，同uni.getLaunchOptionsSync的返回值onShow当uni-app启动，或从后台进入前台显示，参数为应用启动参数，同uni.getLaunchOptionsSync的返回值onHide当uni-app从前台进入后台onError当uni-app报错时触发app-uvue 不支持onUniNViewMessage对nvue页面发送的数据进行监听，可参考nvue 向 vue 通讯app-uvue 不支持onUnhandledRejection对未处理的 Promise 拒绝事件监听函数（2.8.1+ app-uvue 暂不支持）app-uvue 不支持onPageNotFound页面不存在监听函数app-uvue 不支持onThemeChange监听系统主题变化app-uvue 不支持onLastPageBackPress最后一个页面按下Android back键，常用于自定义退出app-uvue-android 3.9+onExit监听应用退出app-uvue-android 3.9+示例代码<script>// 只能在App.vue里监听应用的生命周期exportdefault{onLaunch:function(options){console.log('App Launch')console.log('应用启动路径：',options.path)},onShow:function(options){console.log('App Show')console.log('应用启动路径：',options.path)},onHide:function(){console.log('App Hide')}}</script>示例源码如下，请查看 pre > code 标签中的内容<script>
+	// 只能在App.vue里监听应用的生命周期
+	export default {
+		onLaunch: function(options) {
+			console.log('App Launch')
+			console.log('应用启动路径：', options.path)
+		},
+		onShow: function(options) {
+			console.log('App Show')
+			console.log('应用启动路径：', options.path)
+		},
+		onHide: function() {
+			console.log('App Hide')
+		}
+	}
+</script>注意应用生命周期仅可在App.vue中监听，在其它页面监听无效。以组合式 API 使用时，在 Vue2 和 Vue3 中存在一定区别，请分别参考：Vue2 组合式 API 使用文档和Vue3 组合式 API 使用文档。应用启动参数，可以在APIuni.getLaunchOptionsSync获取，详见onlaunch里进行页面跳转，如遇白屏报错，请参考https://ask.dcloud.net.cn/article/35942App.vue不能写模板onPageNotFound 页面实际上已经打开了（比如通过分享卡片、小程序码）且发现页面不存在，才会触发，api 跳转不存在的页面不会触发（如 uni.navigateTo）#globalData小程序有globalData，这是一种简单的全局变量机制。这套机制在uni-app里也可以使用，并且全端通用。当然vue框架的全局变量，另有其他方式定义。以下是 App.vue 中定义globalData的相关配置：<script>exportdefault{globalData:{text:'text'}}</script>示例源码如下，请查看 pre > code 标签中的内容<script>  
+    export default {  
+        globalData: {  
+            text: 'text'  
+        }
+    }  
+</script>js中操作globalData的方式如下：getApp().globalData.text = 'test'在应用onLaunch时，getApp对象还未获取，暂时可以使用this.globalData获取globalData。如果需要把globalData的数据绑定到页面上，可在页面的onShow页面生命周期里进行变量重赋值。nvue的weex编译模式中使用globalData的话，由于weex生命周期不支持onShow，但熟悉5+的话，可利用监听webview的addEventListener show事件实现onShow效果，或者直接使用weex生命周期中的beforeCreate。但建议开发者使用uni-app编译模式，而不是weex编译模式。globalData是简单的全局变量，如果使用状态管理，请使用vuex（main.js中定义）#全局样式在App.vue中，可以定义一些全局通用样式，例如需要加一个通用的背景色，首屏页面渲染的动画等都可以写在App.vue中。注意如果工程下同时有vue和nvue文件，全局样式的所有css会应用于所有文件，而nvue支持的css有限，编译器会在控制台报警，提示某些css无法在nvue中支持。此时需要把nvue不支持的css写在单独的条件编译里。如：<style>/* #ifndef APP-PLUS-NVUE */@import'./common/uni.css';/* #endif*/</style>示例源码如下，请查看 pre > code 标签中的内容<style>
+    /* #ifndef APP-PLUS-NVUE */
+    @import './common/uni.css';
+    /* #endif*/
+</style>帮助我们改善此页面！上次更新:2023/12/26 16:38:30开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读应用生命周期globalData全局样式
+
+---
+
 ## App Android@android | uni-app官网
 
 **URL:** https://uniapp.dcloud.net.cn/collocation/manifest-app.html
@@ -3570,6 +3697,83 @@ Example 4 (json):
 
 ---
 
+## package.json | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/package.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号uni-app 属性用法示例：钉钉小程序示例：微信服务号#package.json#uni-app 属性在开发 web 时，有时需要一套代码编译发布到不同的站点，比如主站和微信 h5 站。（注意不是一套代码内部自适应不同浏览器，是真的分离部署了不同的网站）在开发小程序时，经常有扩展小程序平台，比如基于阿里小程序的钉钉小程序、淘宝小程序。uni-app 通过在package.json文件中增加uni-app扩展节点，可实现自定义条件编译平台。扩展新的平台后，有 3 点影响：可以在代码里编写自定义的条件编译，为这个新平台编写专用代码运行时可以执行面向新平台的编译运行发行时可以执行面向新平台的编译发行注意只能扩展 web 和小程序平台，不能扩展 app 打包。并且扩展小程序平台时只能基于指定的基准平台扩展子平台，不能扩展基准平台。基准平台详见下文。#用法package.json 扩展配置用法：{/**
+   * package.json其它原有配置
+   * 拷贝代码后请去掉注释！
+   */"uni-app":{// 扩展配置"scripts":{"custom-platform":{//自定义编译平台配置，可通过cli方式调用"title":"自定义扩展名称",// 在HBuilderX中会显示在 运行/发行 菜单中"browser":"",//运行到的目标浏览器，仅当UNI_PLATFORM为h5时有效"env":{//环境变量"UNI_PLATFORM":"",//基准平台"MY_TEST":""// ... 其他自定义环境变量},"define":{//自定义条件编译"CUSTOM-CONST":true//自定义条件编译常量，建议为大写}}}}}示例源码如下，请查看 pre > code 标签中的内容{
+  /**
+   * package.json其它原有配置
+   * 拷贝代码后请去掉注释！
+   */
+  "uni-app": {
+    // 扩展配置
+    "scripts": {
+      "custom-platform": {
+        //自定义编译平台配置，可通过cli方式调用
+        "title": "自定义扩展名称", // 在HBuilderX中会显示在 运行/发行 菜单中
+        "browser": "", //运行到的目标浏览器，仅当UNI_PLATFORM为h5时有效
+        "env": {
+          //环境变量
+          "UNI_PLATFORM": "", //基准平台
+          "MY_TEST": "" // ... 其他自定义环境变量
+        },
+        "define": {
+          //自定义条件编译
+          "CUSTOM-CONST": true //自定义条件编译常量，建议为大写
+        }
+      }
+    }
+  }
+}Tips：UNI_PLATFORM仅支持填写uni-app默认支持的基准平台，目前仅限如下枚举值：h5、mp-weixin、mp-alipay、mp-baidu、mp-toutiao、mp-qqbrowser仅在UNI_PLATFORM为h5时有效,目前仅限如下枚举值：chrome、firefox、ie、edge、safari、hbuilderxpackage.json文件中不允许出现注释，否则扩展配置无效vue-cli需更新到最新版，HBuilderX 需升级到 2.1.6+ 版本vue2可以通过process.UNI_SCRIPT_ENV获取对应平台配置的env，vue3可以通过process.env.UNI_CUSTOM_DEFINE获取#示例：钉钉小程序如下是一个自定义钉钉小程序（MP-DINGTALK）的 package.json 示例配置（拷贝代码记得去掉注释）：{"uni-app":{"scripts":{"mp-dingtalk":{"title":"钉钉小程序","env":{"UNI_PLATFORM":"mp-alipay"},"define":{"MP-DINGTALK":true}}}}}示例源码如下，请查看 pre > code 标签中的内容{
+  "uni-app": {
+    "scripts": {
+      "mp-dingtalk": {
+        "title": "钉钉小程序",
+        "env": {
+          "UNI_PLATFORM": "mp-alipay"
+        },
+        "define": {
+          "MP-DINGTALK": true
+        }
+      }
+    }
+  }
+}在代码中使用自定义平台开发者可在代码中使用MP-DINGTALK进行条件编译，如下：// #ifdef MP小程序平台通用代码（含钉钉）// #endif// #ifdef MP-ALIPAY支付宝平台通用代码（含钉钉）// #endif// #ifdef MP-DINGTALK钉钉平台特有代码// #endif示例源码如下，请查看 pre > code 标签中的内容// #ifdef MP
+小程序平台通用代码（含钉钉）
+// #endif
+// #ifdef MP-ALIPAY
+支付宝平台通用代码（含钉钉）
+// #endif
+// #ifdef MP-DINGTALK
+钉钉平台特有代码
+// #endif运行及发布项目vue-cli开发者可通过如下命令，启动钉钉小程序平台的编译：npmrun dev:custom mp-dingtalknpmrun build:custom mp-dingtalk示例源码如下，请查看 pre > code 标签中的内容npm run dev:custom mp-dingtalk
+npm run build:custom mp-dingtalkHBuilderX会根据package.json的扩展配置，在运行、发行菜单下，生成自定义菜单（钉钉小程序），开发者点击对应菜单编译运行即可，如下图：Tips：钉钉小程序编译目录依然是mp-alipay，需通过支付宝开发者工具，选择“钉钉小程序”，然后打开该目录进行预览及发布。#示例：微信服务号如下是一个自定义微信服务号平台（H5-WEIXIN）的示例配置："uni-app":{"scripts":{"h5-weixin":{"title":"微信服务号","browser":"chrome","env":{"UNI_PLATFORM":"h5"},"define":{"H5-WEIXIN":true}}}}示例源码如下，请查看 pre > code 标签中的内容"uni-app": {
+    "scripts": {
+        "h5-weixin": {
+            "title":"微信服务号",
+            "browser":"chrome",
+            "env": {
+                "UNI_PLATFORM": "h5"
+             },
+            "define": {
+                "H5-WEIXIN": true
+            }
+        }
+    }
+}开发者可在代码块中使用H5-WEIXIN变量，如下：// #ifdef H5H5平台通用代码（含微信服务号）// #endif// #ifdef H5-WEIXIN微信服务号特有代码// #endif示例源码如下，请查看 pre > code 标签中的内容// #ifdef H5
+H5平台通用代码（含微信服务号）
+// #endif
+// #ifdef H5-WEIXIN
+微信服务号特有代码
+// #endifvue-cli开发者可通过如下命令，启动微信服务号平台（H5-WEIXIN）平台的编译：npmrun dev:custom h5-weixinnpmrun build:custom h5-weixin示例源码如下，请查看 pre > code 标签中的内容npm run dev:custom h5-weixin
+npm run build:custom h5-weixinHBuilderX会根据package.json的扩展配置，在运行、发行菜单下，生成自定义菜单（微信服务号），开发者点击对应菜单编译运行即可，如下图：帮助我们改善此页面！上次更新:2025/10/14 19:35:25开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读uni-app 属性用法示例：钉钉小程序示例：微信服务号
+
+---
+
 ## uni.getRecorderManager() | uni-app官网
 
 **URL:** https://uniapp.dcloud.net.cn/api/media/record-manager
@@ -4113,6 +4317,83 @@ export default {
 }
 </script>
 ```
+
+---
+
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/uni-scss.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号uni.scss文件的用途是为了方便整体控制应用的风格。比如按钮颜色、边框风格，uni.scss文件里预置了一批scss变量预置。uni-app官方扩展插件（uni ui）及插件市场上很多三方插件均使用了这些样式变量，如果你是插件开发者，建议你使用 scss 预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App。uni.scss是一个特殊文件，在代码中无需 import 这个文件即可在scss代码中使用这里的样式变量。uni-app的编译器在webpack配置中特殊处理了这个uni.scss，使得每个scss文件都被注入这个uni.scss，达到全局可用的效果。如果开发者想要less、stylus的全局使用，需要在vue.config.js中自行配置webpack策略。注意：如要使用这些常用变量，需要在 HBuilderX 里面安装 scss 插件；使用时需要在 style 节点上加上lang="scss"。<stylelang="scss"></style>示例源码如下，请查看 pre > code 标签中的内容<style lang="scss">
+</style>pages.json不支持scss，原生导航栏和tabbar的动态修改只能使用js api以下是 uni.scss 的相关变量：/* 颜色变量 *//* 行为相关颜色 */$uni-color-primary:#007aff;$uni-color-success:#4cd964;$uni-color-warning:#f0ad4e;$uni-color-error:#dd524d;/* 文字基本颜色 */$uni-text-color:#333;//基本色
+$uni-text-color-inverse:#fff;//反色
+$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$uni-text-color-placeholder:#808080;$uni-text-color-disable:#c0c0c0;/* 背景颜色 */$uni-bg-color:#ffffff;$uni-bg-color-grey:#f8f8f8;$uni-bg-color-hover:#f1f1f1;//点击状态颜色
+$uni-bg-color-mask:rgba(0,0,0,0.4);//遮罩颜色/* 边框颜色 */$uni-border-color:#c8c7cc;/* 尺寸变量 *//* 文字尺寸 */$uni-font-size-sm:24rpx;$uni-font-size-base:28rpx;$uni-font-size-lg:32rpx;/* 图片尺寸 */$uni-img-size-sm:40rpx;$uni-img-size-base:52rpx;$uni-img-size-lg:80rpx;/* Border Radius */$uni-border-radius-sm:4rpx;$uni-border-radius-base:6rpx;$uni-border-radius-lg:12rpx;$uni-border-radius-circle:50%;/* 水平间距 */$uni-spacing-row-sm:10px;$uni-spacing-row-base:20rpx;$uni-spacing-row-lg:30rpx;/* 垂直间距 */$uni-spacing-col-sm:8rpx;$uni-spacing-col-base:16rpx;$uni-spacing-col-lg:24rpx;/* 透明度 */$uni-opacity-disabled:0.3;// 组件禁用态的透明度/* 文章场景相关 */$uni-color-title:#2C405A;// 文章标题颜色
+$uni-font-size-title:40rpx;$uni-color-subtitle:#555555;// 二级标题颜色
+$uni-font-size-subtitle:36rpx;$uni-color-paragraph:#3F536E;// 文章段落颜色
+$uni-font-size-paragraph:30rpx;示例源码如下，请查看 pre > code 标签中的内容/* 颜色变量 */
+
+/* 行为相关颜色 */
+$uni-color-primary: #007aff;
+$uni-color-success: #4cd964;
+$uni-color-warning: #f0ad4e;
+$uni-color-error: #dd524d;
+
+/* 文字基本颜色 */
+$uni-text-color:#333;//基本色
+$uni-text-color-inverse:#fff;//反色
+$uni-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$uni-text-color-placeholder: #808080;
+$uni-text-color-disable:#c0c0c0;
+
+/* 背景颜色 */
+$uni-bg-color:#ffffff;
+$uni-bg-color-grey:#f8f8f8;
+$uni-bg-color-hover:#f1f1f1;//点击状态颜色
+$uni-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+
+/* 边框颜色 */
+$uni-border-color:#c8c7cc;
+
+/* 尺寸变量 */
+
+/* 文字尺寸 */
+$uni-font-size-sm:24rpx;
+$uni-font-size-base:28rpx;
+$uni-font-size-lg:32rpx;
+
+/* 图片尺寸 */
+$uni-img-size-sm:40rpx;
+$uni-img-size-base:52rpx;
+$uni-img-size-lg:80rpx;
+
+/* Border Radius */
+$uni-border-radius-sm: 4rpx;
+$uni-border-radius-base: 6rpx;
+$uni-border-radius-lg: 12rpx;
+$uni-border-radius-circle: 50%;
+
+/* 水平间距 */
+$uni-spacing-row-sm: 10px;
+$uni-spacing-row-base: 20rpx;
+$uni-spacing-row-lg: 30rpx;
+
+/* 垂直间距 */
+$uni-spacing-col-sm: 8rpx;
+$uni-spacing-col-base: 16rpx;
+$uni-spacing-col-lg: 24rpx;
+
+/* 透明度 */
+$uni-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+/* 文章场景相关 */
+$uni-color-title: #2C405A; // 文章标题颜色
+$uni-font-size-title:40rpx;
+$uni-color-subtitle: #555555; // 二级标题颜色
+$uni-font-size-subtitle:36rpx;
+$uni-color-paragraph: #3F536E; // 文章段落颜色
+$uni-font-size-paragraph:30rpx;帮助我们改善此页面！上次更新:2022/1/21 14:31:33开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读
 
 ---
 
@@ -5060,6 +5341,47 @@ Example 4 (html):
 
 ---
 
+## main.js/main.uts | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/main.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号代码时序插件#main.js/main.utsmain.js/uts是 uni-app 的入口文件。uni-app js引擎版是main.js，而uni-app x则是main.uts。以下一般用main.js泛指全部。main.js主要作用是初始化vue实例、定义全局组件、使用需要的插件如 i18n、vuex。首先引入了Vue库和App.vue，创建了一个vue实例，并且挂载vue实例。uni-app（Vue2）uni-app（Vue3）uni-app x（main.uts）importVuefrom'vue'importAppfrom'./App'importPageHeadfrom'./components/page-head.vue'//全局引用 page-head 组件Vue.config.productionTip=falseVue.component('page-head',PageHead)//全局注册 page-head 组件，每个页面将可以直接使用该组件App.mpType='app'constapp=newVue({...App})app.$mount()//挂载 Vue 实例示例源码如下，请查看 pre > code 标签中的内容import Vue from 'vue'
+import App from './App'
+import PageHead from './components/page-head.vue' //全局引用 page-head 组件
+
+Vue.config.productionTip = false
+Vue.component('page-head', PageHead) //全局注册 page-head 组件，每个页面将可以直接使用该组件
+App.mpType = 'app'
+
+const app = new Vue({
+...App
+})
+app.$mount() //挂载 Vue 实例示例源码如下，请查看 pre > code 标签中的内容import App from './App'
+import { createSSRApp } from 'vue'
+import PageHead from './components/page-head.vue' //全局引用 page-head 组件
+
+export function createApp() {
+    const app = createSSRApp(App)
+    app.component('page-head', PageHead) //全局注册 page-head 组件，每个页面将可以直接使用该组件
+
+    return {
+        app
+    }
+}示例源码如下，请查看 pre > code 标签中的内容import App from './App'
+import { createSSRApp } from 'vue'
+import PageHead from './components/page-head.vue' //全局引用 page-head 组件
+
+export function createApp() {
+  const app = createSSRApp(App)
+  app.component('page-head', PageHead) //全局注册 page-head 组件，每个页面将可以直接使用该组件
+
+  return {
+    app
+  }
+}一般情况下，使用easycom比全局组件更常用，easycom按需应用更节省资源。#代码时序开发者写的代码，在应用启动时，按如下时序加载：main.js/uts 的export function createApp() {}外的代码、任何页面/组件的script中export default {}外的代码main.js/uts 的export function createApp() {}中的代码app.vue/uvue中onLaunch的代码首页的onLoad首页的onReady开发者需谨慎在main.js/uts、页面/组件script中export default {}外、和onLaunch中编写代码：这些的代码都会影响启动速度（定义type不会，type是使用时才加载）执行太早，很多功能和API无法使用，需trycatch。尤其是与界面相关的都无法使用，此时首页都还没有创建。main.js/uts、页面script中export default {}外的代码，其创建的变量在应用存活时一直占据着内存，不会跟随页面关闭而回收#插件使用Vue.use引用插件，使用Vue.prototype添加全局变量，使用Vue.component注册全局组件。可以引用vuex，因涉及多个文件，此处没有提供示例，详见hello uni-app示例工程。无法使用vue-router，路由须在pages.json中进行配置。如果开发者坚持使用vue-router，可以在插件市场找到转换插件。注意nvue 暂不支持在 main.js 注册全局组件uni-app x 暂不支持 i18n、vuex、pinia等插件帮助我们改善此页面！上次更新:2023/11/23 20:04:29开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读代码时序插件
+
+---
+
 ## uni-app官网
 
 **URL:** https://uniapp.dcloud.net.cn/worktile/auto/hbuilderx-extension/
@@ -5286,6 +5608,250 @@ Example 4 (unknown):
 ```unknown
 仅抖音小程序(1.90.0+)
 ```
+
+---
+
+## pages.json 页面路由 | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/pages.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号globalStyletopWindowmatchMedialeftWindowrightWindowpagesstyle自定义导航栏使用注意app-plus导航栏展示全部#pages.json 页面路由pages.json文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生 tabbar 等。导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。它类似微信小程序中app.json的页面管理部分。注意定位权限申请等原属于app.json的内容，在 uni-app 中是在 manifest 中配置。#配置项列表属性类型必填描述平台兼容globalStyleObject否设置默认页面的窗口表现pagesObject Array是设置页面路径及窗口表现easycomObject否组件自动引入规则2.5.5+tabBarObject否设置底部 tab 的表现conditionObject否启动模式配置subPackagesObject Array否分包加载配置H5 不支持preloadRuleObject否分包预下载规则微信小程序、QQ 小程序、抖音小程序、支付宝小程序、京东小程序leftWindowObject否大屏左侧窗口H5topWindowObject否大屏顶部窗口H5rightWindowObject否大屏右侧窗口H5uniIdRouterObject否自动跳转相关配置，新增于 HBuilderX 3.5.0entryPagePathString否默认启动首页，新增于 HBuilderX 3.7.0微信小程序、支付宝小程序、抖音小程序、鸿蒙元服务以下是一个包含了所有配置选项的pages.json：{"pages":[{"path":"pages/component/index","style":{"navigationBarTitleText":"组件"}},{"path":"pages/API/index","style":{"navigationBarTitleText":"接口"}},{"path":"pages/component/view/index","style":{"navigationBarTitleText":"view"}}],"condition":{//模式配置，仅开发期间生效"current":0,//当前激活的模式（list 的索引项）"list":[{"name":"test",//模式名称"path":"pages/component/view/index"//启动页面，必选}]},"globalStyle":{"navigationBarTextStyle":"black","navigationBarTitleText":"演示","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8","usingComponents":{"collapse-tree-item":"/components/collapse-tree-item"},"renderingMode":"seperated",// 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染"pageOrientation":"portrait",//横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape"rpxCalcMaxDeviceWidth":960,"rpxCalcBaseDeviceWidth":375,"rpxCalcIncludeWidth":750},"tabBar":{"color":"#7A7E83","selectedColor":"#3cc51f","borderStyle":"black","backgroundColor":"#ffffff","height":"50px","fontSize":"10px","iconWidth":"24px","spacing":"3px","iconfontSrc":"static/iconfont.ttf",// app tabbar 字体.ttf文件路径 app 3.4.4+"list":[{"pagePath":"pages/component/index","iconPath":"static/image/icon_component.png","selectedIconPath":"static/image/icon_component_HL.png","text":"组件","iconfont":{// 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc"text":"\ue642",// 已实际字体编码为准"selectedText":"\ue776","fontSize":"17px","color":"#000000","selectedColor":"#0000ff"}},{"pagePath":"pages/API/index","iconPath":"static/image/icon_API.png","selectedIconPath":"static/image/icon_API_HL.png","text":"接口"}],"midButton":{"width":"80px","height":"50px","text":"文字","iconPath":"static/image/midButton_iconPath.png","iconWidth":"24px","backgroundImage":"static/image/midButton_backgroundImage.png"}},"easycom":{"autoscan":true,//是否自动扫描组件"custom":{//自定义扫描规则"^uni-(.*)":"@/components/uni-$1.vue"}},"topWindow":{"path":"responsive/top-window.vue","style":{"height":"44px"}},"leftWindow":{"path":"responsive/left-window.vue","style":{"width":"300px"}},"rightWindow":{"path":"responsive/right-window.vue","style":{"width":"300px"},"matchMedia":{"minWidth":768}}}示例源码如下，请查看 pre > code 标签中的内容{
+  "pages": [
+    {
+      "path": "pages/component/index",
+      "style": {
+        "navigationBarTitleText": "组件"
+      }
+    },
+    {
+      "path": "pages/API/index",
+      "style": {
+        "navigationBarTitleText": "接口"
+      }
+    },
+    {
+      "path": "pages/component/view/index",
+      "style": {
+        "navigationBarTitleText": "view"
+      }
+    }
+  ],
+  "condition": {
+    //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式（list 的索引项）
+    "list": [
+      {
+        "name": "test", //模式名称
+        "path": "pages/component/view/index" //启动页面，必选
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "usingComponents": {
+      "collapse-tree-item": "/components/collapse-tree-item"
+    },
+    "renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
+    "pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+    "rpxCalcMaxDeviceWidth": 960,
+    "rpxCalcBaseDeviceWidth": 375,
+    "rpxCalcIncludeWidth": 750
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "iconfontSrc": "static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
+    "list": [
+      {
+        "pagePath": "pages/component/index",
+        "iconPath": "static/image/icon_component.png",
+        "selectedIconPath": "static/image/icon_component_HL.png",
+        "text": "组件",
+        "iconfont": {
+          // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+          "text": "\ue642", // 已实际字体编码为准
+          "selectedText": "\ue776",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      },
+      {
+        "pagePath": "pages/API/index",
+        "iconPath": "static/image/icon_API.png",
+        "selectedIconPath": "static/image/icon_API_HL.png",
+        "text": "接口"
+      }
+    ],
+    "midButton": {
+      "width": "80px",
+      "height": "50px",
+      "text": "文字",
+      "iconPath": "static/image/midButton_iconPath.png",
+      "iconWidth": "24px",
+      "backgroundImage": "static/image/midButton_backgroundImage.png"
+    }
+  },
+  "easycom": {
+    "autoscan": true, //是否自动扫描组件
+    "custom": {
+      //自定义扫描规则
+      "^uni-(.*)": "@/components/uni-$1.vue"
+    }
+  },
+  "topWindow": {
+    "path": "responsive/top-window.vue",
+    "style": {
+      "height": "44px"
+    }
+  },
+  "leftWindow": {
+    "path": "responsive/left-window.vue",
+    "style": {
+      "width": "300px"
+    }
+  },
+  "rightWindow": {
+    "path": "responsive/right-window.vue",
+    "style": {
+      "width": "300px"
+    },
+    "matchMedia": {
+      "minWidth": 768
+    }
+  }
+}#globalStyle用于设置应用的状态栏、导航条、标题、窗口背景色等。属性类型默认值描述平台差异说明navigationBarBackgroundColorHexColor#F8F8F8导航栏背景颜色（同状态栏背景色）APP 与 H5 为#F8F8F8，小程序平台请参考相应小程序文档navigationBarTextStyleStringblack导航栏标题颜色及状态栏前景颜色，仅支持 black/whitenavigationBarTitleTextString导航栏标题文字内容navigationStyleStringdefault导航栏样式，仅支持 default/custom。custom 即取消默认的原生导航栏，需看使用注意微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序backgroundColorHexColor#ffffff下拉显示出来的窗口的背景色微信小程序、小红书小程序backgroundTextStyleStringdark下拉 loading 的样式，仅支持 dark / light微信小程序enablePullDownRefreshBooleanfalse是否开启下拉刷新，详见页面生命周期。onReachBottomDistanceNumber50页面上拉触底事件触发时距页面底部距离，单位只支持 px，详见页面生命周期backgroundColorTopHexColor#ffffff顶部窗口的背景色（bounce 回弹区域）仅 iOS 平台backgroundColorBottomHexColor#ffffff底部窗口的背景色（bounce 回弹区域）仅 iOS 平台titleImageString导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用 https 的图片链接地址支付宝小程序、H5、APPtransparentTitleStringnone导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明支付宝小程序、H5、APPtitlePenetrateStringNO导航栏点击穿透支付宝小程序、H5pageOrientationStringportrait横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见响应显示区域变化App 2.4.7+、微信小程序、QQ 小程序animationTypeStringpop-in窗口显示的动画效果，详见：窗口动画AppanimationDurationNumber300窗口显示动画的持续时间，单位为 msAppapp-plusObject设置编译到 App 平台的特定样式，配置项参考下方app-plusAppapp-harmonyObject设置编译到 App 平台的特定样式，配置项参考下方app-harmonyApph5Object设置编译到 H5 平台的特定样式，配置项参考下方H5H5mp-alipayObject设置编译到 mp-alipay 平台的特定样式，配置项参考下方MP-ALIPAY支付宝小程序mp-weixinObject设置编译到 mp-weixin 平台的特定样式，配置项参考下方MP-WEIXIN微信小程序mp-baiduObject设置编译到 mp-baidu 平台的特定样式，配置项参考下方MP-BAIDU百度小程序mp-toutiaoObject设置编译到 mp-toutiao 平台的特定样式抖音小程序mp-larkObject设置编译到 mp-lark 平台的特定样式飞书小程序mp-qqObject设置编译到 mp-qq 平台的特定样式QQ 小程序mp-kuaishouObject设置编译到 mp-kuaishou 平台的特定样式快手小程序mp-jdObject设置编译到 mp-jd 平台的特定样式京东小程序mp-xhsObject设置编译到 mp-xhs 平台的特定样式小红书小程序mp-harmonyObject设置编译到 mp-harmony 平台的特定样式鸿蒙元服务usingComponentsObject引用小程序组件，参考小程序组件renderingModeString同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层微信小程序leftWindowBooleantrue当存在 leftWindow 时，默认是否显示 leftWindowH5topWindowBooleantrue当存在 topWindow 时，默认是否显示 topWindowH5rightWindowBooleantrue当存在 rightWindow 时，默认是否显示 rightWindowH5rpxCalcMaxDeviceWidthNumber960rpx 计算所支持的最大设备宽度，单位 pxApp（vue2 且不含 nvue）、H5（2.8.12+）rpxCalcBaseDeviceWidthNumber375rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 pxApp（vue2 且不含 nvue）、H5（2.8.12+）rpxCalcIncludeWidthNumber750rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpxApp（vue2 且不含 nvue）、H5（2.8.12+）dynamicRpxBooleanfalse动态 rpx，屏幕大小变化会重新渲染 rpxApp-nvue（vue3 固定值为 true） 3.2.13+maxWidthNumber单位 px，当浏览器可见区域宽度大于 maxWidth 时，两侧留白，当小于等于 maxWidth 时，页面铺满；不同页面支持配置不同的 maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)H5（2.9.9+）注意支付宝小程序使用titleImage时必须使用https的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果globalStyle中设置的titleImage也会覆盖掉pages->style内的设置文字标题使用maxWidth时，页面内 fixed 元素需要使用--window-left,--window-right 来保证布局位置正确dynamicRpxvue3 nvue 页面已移除此配置，升级为横竖屏切换自动 rpx，如果不需要可以使用 px#topWindowuni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽屏适配问题。以现有的手机应用为 mainWindow，在左、上、右，可以追加新的页面显示窗体。整体的宽屏适配思路，参考单独的宽屏适配指南属性类
+
+---
+
+## pages.json 页面路由 | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/pages.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号globalStyletopWindowmatchMedialeftWindowrightWindowpagesstyle自定义导航栏使用注意app-plus导航栏展示全部#pages.json 页面路由pages.json文件用来对 uni-app 进行全局配置，决定页面文件的路径、窗口样式、原生的导航栏、底部的原生 tabbar 等。导航栏高度为 44px (不含状态栏)，tabBar 高度为 50px (不含安全区)。它类似微信小程序中app.json的页面管理部分。注意定位权限申请等原属于app.json的内容，在 uni-app 中是在 manifest 中配置。#配置项列表属性类型必填描述平台兼容globalStyleObject否设置默认页面的窗口表现pagesObject Array是设置页面路径及窗口表现easycomObject否组件自动引入规则2.5.5+tabBarObject否设置底部 tab 的表现conditionObject否启动模式配置subPackagesObject Array否分包加载配置H5 不支持preloadRuleObject否分包预下载规则微信小程序、QQ 小程序、抖音小程序、支付宝小程序、京东小程序leftWindowObject否大屏左侧窗口H5topWindowObject否大屏顶部窗口H5rightWindowObject否大屏右侧窗口H5uniIdRouterObject否自动跳转相关配置，新增于 HBuilderX 3.5.0entryPagePathString否默认启动首页，新增于 HBuilderX 3.7.0微信小程序、支付宝小程序、抖音小程序、鸿蒙元服务以下是一个包含了所有配置选项的pages.json：{"pages":[{"path":"pages/component/index","style":{"navigationBarTitleText":"组件"}},{"path":"pages/API/index","style":{"navigationBarTitleText":"接口"}},{"path":"pages/component/view/index","style":{"navigationBarTitleText":"view"}}],"condition":{//模式配置，仅开发期间生效"current":0,//当前激活的模式（list 的索引项）"list":[{"name":"test",//模式名称"path":"pages/component/view/index"//启动页面，必选}]},"globalStyle":{"navigationBarTextStyle":"black","navigationBarTitleText":"演示","navigationBarBackgroundColor":"#F8F8F8","backgroundColor":"#F8F8F8","usingComponents":{"collapse-tree-item":"/components/collapse-tree-item"},"renderingMode":"seperated",// 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染"pageOrientation":"portrait",//横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape"rpxCalcMaxDeviceWidth":960,"rpxCalcBaseDeviceWidth":375,"rpxCalcIncludeWidth":750},"tabBar":{"color":"#7A7E83","selectedColor":"#3cc51f","borderStyle":"black","backgroundColor":"#ffffff","height":"50px","fontSize":"10px","iconWidth":"24px","spacing":"3px","iconfontSrc":"static/iconfont.ttf",// app tabbar 字体.ttf文件路径 app 3.4.4+"list":[{"pagePath":"pages/component/index","iconPath":"static/image/icon_component.png","selectedIconPath":"static/image/icon_component_HL.png","text":"组件","iconfont":{// 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc"text":"\ue642",// 已实际字体编码为准"selectedText":"\ue776","fontSize":"17px","color":"#000000","selectedColor":"#0000ff"}},{"pagePath":"pages/API/index","iconPath":"static/image/icon_API.png","selectedIconPath":"static/image/icon_API_HL.png","text":"接口"}],"midButton":{"width":"80px","height":"50px","text":"文字","iconPath":"static/image/midButton_iconPath.png","iconWidth":"24px","backgroundImage":"static/image/midButton_backgroundImage.png"}},"easycom":{"autoscan":true,//是否自动扫描组件"custom":{//自定义扫描规则"^uni-(.*)":"@/components/uni-$1.vue"}},"topWindow":{"path":"responsive/top-window.vue","style":{"height":"44px"}},"leftWindow":{"path":"responsive/left-window.vue","style":{"width":"300px"}},"rightWindow":{"path":"responsive/right-window.vue","style":{"width":"300px"},"matchMedia":{"minWidth":768}}}示例源码如下，请查看 pre > code 标签中的内容{
+  "pages": [
+    {
+      "path": "pages/component/index",
+      "style": {
+        "navigationBarTitleText": "组件"
+      }
+    },
+    {
+      "path": "pages/API/index",
+      "style": {
+        "navigationBarTitleText": "接口"
+      }
+    },
+    {
+      "path": "pages/component/view/index",
+      "style": {
+        "navigationBarTitleText": "view"
+      }
+    }
+  ],
+  "condition": {
+    //模式配置，仅开发期间生效
+    "current": 0, //当前激活的模式（list 的索引项）
+    "list": [
+      {
+        "name": "test", //模式名称
+        "path": "pages/component/view/index" //启动页面，必选
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "演示",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "usingComponents": {
+      "collapse-tree-item": "/components/collapse-tree-item"
+    },
+    "renderingMode": "seperated", // 仅微信小程序，webrtc 无法正常时尝试强制关闭同层渲染
+    "pageOrientation": "portrait", //横屏配置，全局屏幕旋转设置(仅 APP/微信/QQ小程序)，支持 auto / portrait / landscape
+    "rpxCalcMaxDeviceWidth": 960,
+    "rpxCalcBaseDeviceWidth": 375,
+    "rpxCalcIncludeWidth": 750
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "height": "50px",
+    "fontSize": "10px",
+    "iconWidth": "24px",
+    "spacing": "3px",
+    "iconfontSrc": "static/iconfont.ttf", // app tabbar 字体.ttf文件路径 app 3.4.4+
+    "list": [
+      {
+        "pagePath": "pages/component/index",
+        "iconPath": "static/image/icon_component.png",
+        "selectedIconPath": "static/image/icon_component_HL.png",
+        "text": "组件",
+        "iconfont": {
+          // 优先级高于 iconPath，该属性依赖 tabbar 根节点的 iconfontSrc
+          "text": "\ue642", // 已实际字体编码为准
+          "selectedText": "\ue776",
+          "fontSize": "17px",
+          "color": "#000000",
+          "selectedColor": "#0000ff"
+        }
+      },
+      {
+        "pagePath": "pages/API/index",
+        "iconPath": "static/image/icon_API.png",
+        "selectedIconPath": "static/image/icon_API_HL.png",
+        "text": "接口"
+      }
+    ],
+    "midButton": {
+      "width": "80px",
+      "height": "50px",
+      "text": "文字",
+      "iconPath": "static/image/midButton_iconPath.png",
+      "iconWidth": "24px",
+      "backgroundImage": "static/image/midButton_backgroundImage.png"
+    }
+  },
+  "easycom": {
+    "autoscan": true, //是否自动扫描组件
+    "custom": {
+      //自定义扫描规则
+      "^uni-(.*)": "@/components/uni-$1.vue"
+    }
+  },
+  "topWindow": {
+    "path": "responsive/top-window.vue",
+    "style": {
+      "height": "44px"
+    }
+  },
+  "leftWindow": {
+    "path": "responsive/left-window.vue",
+    "style": {
+      "width": "300px"
+    }
+  },
+  "rightWindow": {
+    "path": "responsive/right-window.vue",
+    "style": {
+      "width": "300px"
+    },
+    "matchMedia": {
+      "minWidth": 768
+    }
+  }
+}#globalStyle用于设置应用的状态栏、导航条、标题、窗口背景色等。属性类型默认值描述平台差异说明navigationBarBackgroundColorHexColor#F8F8F8导航栏背景颜色（同状态栏背景色）APP 与 H5 为#F8F8F8，小程序平台请参考相应小程序文档navigationBarTextStyleStringblack导航栏标题颜色及状态栏前景颜色，仅支持 black/whitenavigationBarTitleTextString导航栏标题文字内容navigationStyleStringdefault导航栏样式，仅支持 default/custom。custom 即取消默认的原生导航栏，需看使用注意微信小程序 7.0+、百度小程序、H5、App（2.0.3+）、小红书小程序backgroundColorHexColor#ffffff下拉显示出来的窗口的背景色微信小程序、小红书小程序backgroundTextStyleStringdark下拉 loading 的样式，仅支持 dark / light微信小程序enablePullDownRefreshBooleanfalse是否开启下拉刷新，详见页面生命周期。onReachBottomDistanceNumber50页面上拉触底事件触发时距页面底部距离，单位只支持 px，详见页面生命周期backgroundColorTopHexColor#ffffff顶部窗口的背景色（bounce 回弹区域）仅 iOS 平台backgroundColorBottomHexColor#ffffff底部窗口的背景色（bounce 回弹区域）仅 iOS 平台titleImageString导航栏图片地址（替换当前文字标题），支付宝小程序内必须使用 https 的图片链接地址支付宝小程序、H5、APPtransparentTitleStringnone导航栏整体（前景、背景）透明设置。支持 always 一直透明 / auto 滑动自适应 / none 不透明支付宝小程序、H5、APPtitlePenetrateStringNO导航栏点击穿透支付宝小程序、H5pageOrientationStringportrait横屏配置，屏幕旋转设置，仅支持 auto / portrait / landscape 详见响应显示区域变化App 2.4.7+、微信小程序、QQ 小程序animationTypeStringpop-in窗口显示的动画效果，详见：窗口动画AppanimationDurationNumber300窗口显示动画的持续时间，单位为 msAppapp-plusObject设置编译到 App 平台的特定样式，配置项参考下方app-plusAppapp-harmonyObject设置编译到 App 平台的特定样式，配置项参考下方app-harmonyApph5Object设置编译到 H5 平台的特定样式，配置项参考下方H5H5mp-alipayObject设置编译到 mp-alipay 平台的特定样式，配置项参考下方MP-ALIPAY支付宝小程序mp-weixinObject设置编译到 mp-weixin 平台的特定样式，配置项参考下方MP-WEIXIN微信小程序mp-baiduObject设置编译到 mp-baidu 平台的特定样式，配置项参考下方MP-BAIDU百度小程序mp-toutiaoObject设置编译到 mp-toutiao 平台的特定样式抖音小程序mp-larkObject设置编译到 mp-lark 平台的特定样式飞书小程序mp-qqObject设置编译到 mp-qq 平台的特定样式QQ 小程序mp-kuaishouObject设置编译到 mp-kuaishou 平台的特定样式快手小程序mp-jdObject设置编译到 mp-jd 平台的特定样式京东小程序mp-xhsObject设置编译到 mp-xhs 平台的特定样式小红书小程序mp-harmonyObject设置编译到 mp-harmony 平台的特定样式鸿蒙元服务usingComponentsObject引用小程序组件，参考小程序组件renderingModeString同层渲染，webrtc(实时音视频) 无法正常时尝试配置 seperated 强制关掉同层微信小程序leftWindowBooleantrue当存在 leftWindow 时，默认是否显示 leftWindowH5topWindowBooleantrue当存在 topWindow 时，默认是否显示 topWindowH5rightWindowBooleantrue当存在 rightWindow 时，默认是否显示 rightWindowH5rpxCalcMaxDeviceWidthNumber960rpx 计算所支持的最大设备宽度，单位 pxApp（vue2 且不含 nvue）、H5（2.8.12+）rpxCalcBaseDeviceWidthNumber375rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 pxApp（vue2 且不含 nvue）、H5（2.8.12+）rpxCalcIncludeWidthNumber750rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpxApp（vue2 且不含 nvue）、H5（2.8.12+）dynamicRpxBooleanfalse动态 rpx，屏幕大小变化会重新渲染 rpxApp-nvue（vue3 固定值为 true） 3.2.13+maxWidthNumber单位 px，当浏览器可见区域宽度大于 maxWidth 时，两侧留白，当小于等于 maxWidth 时，页面铺满；不同页面支持配置不同的 maxWidth；maxWidth = leftWindow(可选)+page(页面主体)+rightWindow(可选)H5（2.9.9+）注意支付宝小程序使用titleImage时必须使用https的图片链接地址，需要真机调试才能看到效果，支付宝开发者工具内无效果globalStyle中设置的titleImage也会覆盖掉pages->style内的设置文字标题使用maxWidth时，页面内 fixed 元素需要使用--window-left,--window-right 来保证布局位置正确dynamicRpxvue3 nvue 页面已移除此配置，升级为横竖屏切换自动 rpx，如果不需要可以使用 px#topWindowuni-app 2.9+ 新增 leftWindow, topWindow, rightWindow 配置。用于解决宽屏适配问题。以现有的手机应用为 mainWindow，在左、上、右，可以追加新的页面显示窗体。整体的宽屏适配思路，参考单独的宽屏适配指南属性类
 
 ---
 
@@ -5819,6 +6385,32 @@ Example 4 (html):
     </view>
 </template>
 ```
+
+---
+
+## manifest.json 应用配置 | uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/manifest.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置App 完整manifest.jsonAndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号配置项列表networkTimeoutuniStatisticsapp-plusApp SplashscreenApp ModulesApp DistributeApp SdkConfigsoptimizationnvue展示全部#manifest.json 应用配置manifest.json文件是应用的配置文件，用于指定应用的名称、图标、权限等。HBuilderX 创建的工程此文件在根目录，CLI 创建的工程此文件在 src 目录。#配置项列表属性类型默认值描述最低版本nameString应用名称appidString新建 uni-app 项目时，DCloud 云端分配。用途详见应用标识descriptionString应用描述localeStringauto设置当前默认语言，具体参考localeversionNameString版本名称，例如：1.0.0。详见下方Tips说明versionCodeNumber版本号，例如：36transformPxBooleantrue是否转换项目的px，为true时将px转换为rpx，为false时，px为传统的实际像素。为兼容历史项目默认值为 true。此选项已废弃，仅部分平台支持，不推荐新项目启用此配置（新建项目模板一般配置为 false）networkTimeoutObject网络超时时间，详见debugBooleanfalse是否开启 debug 模式，开启后调试信息以info的形式给出，其信息有页面的注册，页面路由，数据更新，事件触发等uniStatisticsObject是否开启 uni 统计，全局配置2.2.3+sassImplementationNamedart-sass或node-sass使用的scss预编译库，仅限vue2项目，默认值：dart-sass，HBuilderX Mac Arm版始终为dart-sass4.56+app-plusObjectApp 特有配置app-harmonyObject鸿蒙应用特有配置4.27h5ObjectH5 特有配置quickappObject快应用特有配置，即将支持mp-weixinObject微信小程序特有配置mp-alipayObject支付宝小程序特有配置mp-baiduObject百度小程序特有配置mp-toutiaoObject抖音小程序特有配置1.6.0mp-larkObject飞书小程序特有配置3.2.12mp-qqObjectqq 小程序特有配置2.1.0mp-kuaishouObject快手小程序特有配置3.2.2mp-harmonyObject鸿蒙元服务特有配置4.34Tipsuni-app 的appid由 DCloud 云端分配，主要用于 DCloud 相关的云服务，请勿自行修改。详见注意区分 uni-app 的appid与微信小程序、iOS 等其它平台分配的appid，以及第三方 SDK 的appid。versionName在云打包App和生成wgt应用资源时会使用。如需升级App版本，先修改此处再云打包。导出wgt资源用于离线打包和热更新时也会以此版本为依据。在本地打包时和热更新时，App版本和wgt应用资源版本将不再保持一致。此时通过plus.runtime.version可获取App版本，通过plus.runtime.getProperty获取wgt资源版本。#networkTimeout各类网络请求的超时时间，单位均为毫秒。属性类型必填默认值说明requestNumber否60000uni.request 的超时时间，单位毫秒。connectSocketNumber否60000uni.connectSocket 的超时时间，单位毫秒。uploadFileNumber否60000uni.uploadFile 的超时时间，单位毫秒。downloadFileNumber否60000uni.downloadFile 的超时时间，单位毫秒。自HBuilderX 2.5.10起，上述默认超时时间由6秒改为60秒，对齐微信小程序平台。#uniStatisticsuni 统计配置项属性类型必填默认值说明enableBoolean是true是否开启uni统计#app-plus属性类型说明最低版本splashscreenObjectApp 启动界面信息，详见screenOrientationArray重力感应、横竖屏配置，可取值："portrait-primary"：竖屏正方向；"portrait-secondary"：竖屏反方向；"landscape-primary"：横屏正方向；"landscape-secondary"：横屏反方向。modulesObject权限模块，详见distributeObjectApp 发布信息，详见nvueCompilerString切换 nvue 编译模式，可选值，weex：老编译模式，uni-app： 新编译模式，默认为weex。编译模式区别详情2.0.3+nvueStyleCompilerString切换 nvue 样式编译模式，可选值，weex：老编译模式，uni-app： 新编译模式，默认为weex。编译模式区别详情3.1.1+rendererString可不加载基于 webview 的运行框架，减少包体积、提升启动速度。可选值nativeApp-nvue 2.2.0+nvueLaunchModeStringNvue 首页启动模式，可选值：normal、fast 默认 normal（HBuilderX 2.4.4-2.4.9 固定为 fast）详见2.5.0+nvueObjectnvue 页面布局初始配置，详见2.0.3+optimizationObject分包配置，可以减轻启动时加载的js数量，提升启动速度2.7.12+runmodeStringnormal：默认模式，liberate：资源释放模式uniStatisticsObjectApp 是否开启 uni 统计，配置方法同全局配置2.2.3+webViewObject当系统webview低于指定版本时，会弹出提示。或者下载x5内核后继续启动，仅Android支持，详情3.5.0+PS：上表只列出了核心部分，App平台的配置其实非常多，完整内容请参考完整的 manifest.json。Tipsmanifest.json 文件的配置，推荐在 HBuilderX 提供的可视化操作界面完成。部分配置在打包时的操作界面补全，例如：证书等信息。Native.js 权限部分会根据配置的模块权限，在打包后自动填充。部分 modules 是默认的，不需要进行配置。微信小程序的appid等信息，需要配置在mp-weixin节点下。不要配置在app-plus下。sdkConfigs下出现的weixin节点，配置的是 App 的第三方 SDK 信息。#App Splashscreensplash（启动封面）是App必然存在的、不可取消的。属性类型默认值描述最低版本alwaysShowBeforeRenderBooleantrue是否等待首页渲染完毕后再关闭启动界面1.6.0autocloseBooleantrue是否自动关闭启动界面，仅当alwaysShowBeforeRender设置为false时生效，如果需要手动关闭启动界面，需将 alwaysShowBeforeRender 及 autoclose 均设置为 false。waitingBooleantrue是否在程序启动界面显示等待圈或雪花alwaysShowBeforeRender和autoclose属性组合设置，可配置以下三种关闭启动界面（splash）策略，详见注意如果不配置自己的splash图，App端会默认把App的icon放到splash中splash只能是标准png，不要用jpg改名为png。也不支持gif等动画相关改动，云打包生效，真机运行不生效。本地打包需自行在原生工程中配置App启动图中iOS的MAX等大屏设备的splash图若不配，会导致iOS认为此App没有为MAX优化，App将无法全屏，四周会有黑边Android的splash支持.9.png，详见#App Modules模块选择是为了控制App的包体积，不需要的模块可以在打包时剔除。名称描述BluetoothBLE蓝牙Contacts系统通讯录Fingerprint指纹识别iBeaconiBeaconLivePusher直播推流Maps地图Messaging短彩邮件消息OAuth登录授权Payment支付Push消息推送Share社交分享Speech语音识别SQLiteSQLite数据库Statistic统计VideoPlayer视频播放注意仅App云打包生效。本地打包需自行在原生工程中配置。#App Distribute属性类型描述androidObjectAndroid 应用配置，详见:Android配置明细iosObjectiOS 应用配置，详见:iOS配置明细sdkConfigsObjectSDK配置，仅打包生效详见orientationArray同 screenOrientation 配置，仅打包生效，已废弃，推荐使用 screenOrientation#App SdkConfigs三方原生SDK配置。三方SDK的使用需要向这些SDK提供商申请，并配置参数到此处。可在HBuilderX可视化界面（App SDK配置）输入配置，此配置仅云打包后生效，本地打包需自行在原生工程中配置。属性类型描述oauthObject授权登录，配置后可调用uni.login进行登录操作，目前支持的授权登录平台有：QQ、微信、新浪微博。shareObject分享，配置后可调用uni.share进行分享，目前支持QQ、微信、新浪微博等分享， 具体配置详见。pushObjectpush配置，使用方式详见，目前支持：uniPush、个推，注意App仅支持一种 push 方式，配置多个 push 无效，建议使用 uniPush，支持多厂商推送。paymentObject三方支付配置，配置后可调用uni.payment进行支付，目前支持微信支付、支付宝支付、苹果内购， 具体配置详见。staticsObject统计配置，目前仅支付友盟统计，详见，在uni-app中只用plus.statistic进行调用。speechObject语音识别配置，支持讯飞语音、百度语音，详见，在uni-app中只用plus.speech进行调用。mapsObject原生地图配置，目前仅支持高德地图，申请方式可参考：地图插件配置。#optimization可以减轻启动时加载的js数量，提升启动速度。从uni-app 2.7.12+ 开始，App-vue平台也兼容了小程序的分包配置，但默认并不开启。在manifest配置以下节点，可以在App端启动分包。属性类型说明subPackagesBoolean是否开启分包优化，目前仅 uni-app vue2 下生效{"app-plus":{"optimization":{"subPackages":true},"runmode":"liberate"// 开启分包优化后，必须配置资源释放模式}}示例源码如下，请查看 pre > code 标签中的内容{
+  "app-plus": {
+    "optimization": {
+      "subPackages": true
+    },
+    "runmode" : "liberate" // 开启分包优化后，必须配置资源释放模式
+  }
+}在manifest中启动分包后，需要在pages.json中配置具体的分包规则，与小程序的配置相同，详见：https://uniapp.dcloud.io/collocation/pages?id=subpackages也就是一旦在pages.json里配置分包，小程序一定生效，而app是否生效，取决于manifest里是否开启。注意:App开启分包后，每个分包单独编译成一个js文件(都包含在app内，不会联网下载)，当App首页是vue时，可减小启动加载文件大小，提升启动速度。首页是nvue时，分包不会提升启动速度，nvue本身启动速度就快于vue，也快于开启分包后的首页为vue的应用。如果追求极致启动速度，还是应该使用nvue做首页并在manifest开启fast模式。App页面较少时，分包对启动速度的优化不明显。#nvuenvue页面布局初始设置属性类型描述flex-directionStringflex 成员项的排列方向，支持项，row：从左到右； row-reverse：从右到左；column：从上到下；column-reverse：与 column 相反，默认值 column。#webviewuni-app 3.5.0+当App代码使用了低版本webview不支持的语法时（比如使用了vue3），可以在manifest配置本属性，来指定最低运行的webview版本。当系统webview版本不符合需求时，uni-app引擎会自动弹框。同时开发者可以指定使用 x5引擎webview 来替代系统webview，以保障浏览器兼容性。详见x5文档当你的应用强依赖x5时，比如需要vue页面的字体和tabbar等原生界面保持一致时，也可以在manifest配置本属性。属性类型说明minUserAgentVersionString最小webview版本，例如：64.0.3282.116。（当低于最小版本要求时，显示WebView版本过低弹框，点击确定退出应用。）x5Object此属性需要在manifest模块配置中勾选 Android X5 Webview 模块，详细参见下面的说明x5 属性说明属性类型默认值说明timeOutNumber3000超时时间showTipsWithoutWifiBooleanfalse是否在非WiFi网络环境时，显示用户确认下载x5内核的弹窗。（如果为true时，在非WiFi网络下载x5模块，会显示用户确认弹框，内容为当前处于非WiFi网络，是否允许下载x5模块？，false时不显示弹框 。）allowDownloadWithoutWiFiBooleanfalse是否允许用户在非WiFi网络时进行x5内核的下载。（如果为true，就不会显示用户确认的弹窗。false时，如果showTipsWithoutWifi为true，就会显示用户确认弹框；showTipsWithoutWifi为false时，不下载x5模块。）webview示例{"app-plus":{"webView":{"minUserAgentVersion":"64.0.3282.116","x5":{"timeOut":3000,"showTipsWithoutWifi":true,"allowDownloadWithoutWiFi":false}}}}示例源码如下，请查看 pre > code 标签中的内容{
+  "app-plus" : {
+    "webView": {
+      "minUserAgentVersion": "64.0.3282.116",
+      "x5": {
+        "timeOut": 3000,
+        "showTipsWithoutWifi": true,
+        "allowDownloadWithoutWiFi": false
+      }
+    }
+  }
+}提示：vue3 vue页面 要求 Android 系统 webview 最低版本为64.0.3282.116#app-harmony鸿蒙应用项目设置，支持distribute属性，其值为一个Object对象：属性类型说明bundleNameString应用包名signingConfigsObject证书签名配置iconsObject应用图标splashScreensObject启动界面配置modulesObject模块配置useragentObject配置 UserAgent#signingConfigs 证书签名配置此配置对象用于配置鸿蒙打包时使用的数字签名证书信息，可分别配置调试证书和发布证书两组信息。可以通过可视化方式进行设置，支持自动获取调试证书。调试证书的键名为"default"，发布证书的键名为"release"，其值为一个Object：属性类型说明storeFileString私钥库文件storePasswordString私钥库访问密码keyAliasString私钥库里面的私钥别名keyPasswordString私钥访问密码signAlgString签名算法，固定为"SHA256withECDSA"certpathString证书文件profileString签名描述文件#icons 应用图标属性类型说明foregroundString前景图，以相对路径指向一个图片文件backgroundString背景图，以相对路径指向一个图片文件#splashScreens 启动界面配置属性类型说明startWindowBackgroundString启动界面背景色，格式为#RRGGBBstartWindowIconString启动界面中部图标，以相对路径指向一个图片文件#modules 模块配置属性类型说明uni-locationObject设置定位模块相关参数uni-mapObject设置地图模块相关参数uni-oauthObject设置登录鉴权模块相关参数uni-paymentObject设置支付模块相关参数uni-shareObject设置分享模块相关参数#useragent属性类型说明valueString可选，JSON对象，应用UserAgent相关配置，默认值为系统UserAgentconcatenateBoolean可选，Boolean类型，是否将value值作为追加值连接到系统默认userAgent值之后#其它支持的属性safearea#h5属性类型说明titleString页面标题，默认使用 manifest.json 的 nametemplateStringindex.html 模板路径，相对于应用根目录，可定制生成的 html 代码。参考：自定义模板, Vue2 支持，Vue3 暂不支持routerObject参考：routerasyncObject参考：asyncdevServerObject开发环境 server 配置，参考：devServerpublicPathString引用资源的地址前缀，仅 Vue2 发布时生效。参考：publicPathsdkConfigsStringSDK配置，例如地图...  参考：sdkConfigsoptimizationObject打包优化配置（HBuilderX 2.1.5 以上支持），参考optimizationuniStatisticsObjectH5 是否开启 uni 统计，配置方法同全局配置#自定义模板目前 Vue2 支持， Vue3 暂不支持需要使用自定义模板的场景，通常有以下几种情况：调整页面 head 中的 meta 配置补充 SEO 相关的一些配置（仅首页）加入百度统计等三方js使用自定义模板时，1. 工程根目录下新建一个html文件；2. 复制下面的基本模板内容，到这个html文件，在此基础上修改meta和引入js；3. 在manifest.json->h5->template节点中关联这个html文件的路径。<!DOCTYPEhtml><htmllang="zh-CN"><head><metacharset="utf-8"><metahttp-equiv="X-UA-Compatible"content="IE=edge"><title><%= htmlWebpackPlugin.options.title %></title><!-- Open Graph data --><!-- <meta property="og:title" content="Title Here" /> --><!-- <meta property="og:url" content="http://www.example.com/" /> --><!-- <meta property="og:image" content="http://example.com/image.jpg" /> --><!-- <meta property="og:des
 
 ---
 
@@ -6966,6 +7558,122 @@ Example 4 (json):
     "noCompress 'png', 'jpg', 'jpeg'"  //配置禁止对 png、jpg、jpeg格式的文件进行压缩
 ]
 ```
+
+---
+
+## uni-app官网
+
+**URL:** https://uniapp.dcloud.net.cn/collocation/vite-config.html
+
+uni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务uni-appuni-appuni-app xuniCloudHBuilder Xuni 小程序 sdkuni-ad广告开发者服务简体中文搜索文档K介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHub全局文件介绍教程全局文件组件API插件AI专题工程化UTS其他规范其他规范App扩展规范 HTML5 Plus微信小程序支付宝小程序百度小程序抖音小程序飞书小程序钉钉小程序QQ小程序快手小程序京东小程序华为快应用360小程序Weex鸿蒙元服务小红书小程序GitHubpages.json 页面路由manifest.json 应用配置AndroidManifest.xml（安卓原生配置）Info.plist（iOS原生配置）App.vue/uvuemain.js/utsuni.scsspackage.jsonvue.config.jsvite.config.jsuniCloud Web控制台插件市场ask问答社区uni-aduni统计代码仓库：Gitee、GitHubuni-app的uni-im交流群：点击加入官方QQ交流群群35：713420817（2000人已满）群34：530305531（2000人已满）群33：498071674（2000人已满）群32：166188631（2000人已满）群31：567471669（2000人已满）群30：371046920（2000人已满）群29：202965481（2000人已满）群28：166188776（2000人已满）群27：811363410（2000人已满）群26：147867597（2000人已满）群25：165297000（2000人已满）群24：672494800（2000人已满）群23：599958679（2000人已满）群22：687186952（2000人已满）群21：717019120（2000人已满）群20：165796402（2000人已满）群19：165657124（2000人已满）群18：698592271（2000人已满）群17：951348804（2000人已满）群16：719211033（2000人已满）群15：516984120（2000人已满）群14：465953250（2000人已满）群13：699478442（2000人已满）群12：884860657（2000人已满）群11：296811328（2000人已满）群10：959059626（2000人已满）群9：775128777（2000人已满）群8：695442854（2000人已满）群7：942061423（2000人已满）群6：697264024（2000人已满）群5：731951419（2000人已满）群4：942702595（2000人已满）群3：773794803（2000人已满）群2：901474938（2000人已满）群1：531031261（2000人已满）关注微信公众号注意事项vite.config.js 是一个可选的配置文件，如果项目的根目录中存在这个文件，那么它会被自动加载，一般用于配置 vite 的编译选项，具体规范参考：vite.config.js支持情况CLI 工程创建教程HBuilderX 3.2.0 及以上版本注意事项仅vue 3项目生效部分配置项会被编译配置覆盖，例如：base：web 平台支持root：不支持mode：不支持publicDir: 不支持，固定为 staticbuild.outDir：不支持build.assetsInlineLimit：仅 h5 支持build.cssCodeSplit：不支持，固定为 truebuild.lib：不支持build.manifest：不支持build.ssrManifest：不支持build.ssr：不支持基础内容必须引用 '@dcloudio/vite-plugin-uni' 并且添加到 plugins 中import{defineConfig}from'vite';importunifrom'@dcloudio/vite-plugin-uni';exportdefaultdefineConfig({plugins:[uni()],});示例源码如下，请查看 pre > code 标签中的内容import { defineConfig } from 'vite';
+import uni from '@dcloudio/vite-plugin-uni';
+
+export default defineConfig({
+	plugins: [uni()],
+});使用示例自定义静态资源目录importpathfrom'path';importfsfrom'fs-extra';// fs-extra 为三方库，需安装依赖import{defineConfig}from'vite';importunifrom'@dcloudio/vite-plugin-uni';functioncopyFile(){return{enforce:'post',asyncwriteBundle(){awaitfs.copy(path.resolve(__dirname,'images'),path.join(__dirname,'unpackage/dist',process.env.NODE_ENV==='production'?'build':'dev',process.env.UNI_PLATFORM,'images'));},};}exportdefaultdefineConfig({plugins:[uni(),copyFile()],});示例源码如下，请查看 pre > code 标签中的内容import path from 'path';
+import fs from 'fs-extra'; // fs-extra 为三方库，需安装依赖
+import { defineConfig } from 'vite';
+import uni from '@dcloudio/vite-plugin-uni';
+
+function copyFile() {
+	return {
+		enforce: 'post',
+		async writeBundle() {
+			await fs.copy(
+				path.resolve(__dirname, 'images'),
+				path.join(
+					__dirname,
+					'unpackage/dist',
+					process.env.NODE_ENV === 'production' ? 'build' : 'dev',
+					process.env.UNI_PLATFORM,
+					'images'
+				)
+			);
+		},
+	};
+}
+
+export default defineConfig({
+	plugins: [uni(), copyFile()],
+});注入全局依赖// 示例从插件市场下载 mp-storageimportpathfrom'path';import{defineConfig}from'vite';importunifrom'@dcloudio/vite-plugin-uni';importinjectfrom'@rollup/plugin-inject';constmpStoragePath=path.resolve(__dirname,'./js_sdk/mp-storage/mp-storage');exportdefaultdefineConfig({plugins:[uni(),inject({localStorage:[mpStoragePath,'localStorage'],'window.localStorage':[mpStoragePath,'localStorage'],}),],define:{'process.env.VUE_APP_TEST':JSON.stringify('test'),},});示例源码如下，请查看 pre > code 标签中的内容// 示例从插件市场下载 mp-storage
+import path from 'path';
+import { defineConfig } from 'vite';
+import uni from '@dcloudio/vite-plugin-uni';
+import inject from '@rollup/plugin-inject';
+
+const mpStoragePath = path.resolve(__dirname, './js_sdk/mp-storage/mp-storage');
+
+export default defineConfig({
+	plugins: [
+		uni(),
+		inject({
+			localStorage: [mpStoragePath, 'localStorage'],
+			'window.localStorage': [mpStoragePath, 'localStorage'],
+		}),
+	],
+	define: {
+		'process.env.VUE_APP_TEST': JSON.stringify('test'),
+	},
+});配置环境变量import{defineConfig}from'vite';importunifrom'@dcloudio/vite-plugin-uni';exportdefaultdefineConfig({plugins:[uni()],define:{'process.env.VUE_APP_TEST':JSON.stringify('test'),},});示例源码如下，请查看 pre > code 标签中的内容import { defineConfig } from 'vite';
+import uni from '@dcloudio/vite-plugin-uni';
+
+export default defineConfig({
+	plugins: [uni()],
+	define: {
+		'process.env.VUE_APP_TEST': JSON.stringify('test'),
+	},
+});注意：在 HBuilderX 中读取.env环境变量可以通过loadEnv获取，注意第二个参数不要使用processs.cwd()， 第二个参数需要填写配置文件所在的绝对路径：const env = loadEnv(mode, __dirname);发布时删除 consoleimport{defineConfig}from'vite';importunifrom'@dcloudio/vite-plugin-uni';exportdefaultdefineConfig({plugins:[uni()],build:{minify:'terser',terserOptions:{compress:{drop_console:true,},},},});示例源码如下，请查看 pre > code 标签中的内容import { defineConfig } from 'vite';
+import uni from '@dcloudio/vite-plugin-uni';
+
+export default defineConfig({
+	plugins: [uni()],
+	build: {
+		minify: 'terser',
+		terserOptions: {
+			compress: {
+				drop_console: true,
+			},
+		},
+	},
+});发布时动态修改 manifest.json// 读取 manifest.json ，修改后重新写入importfsfrom'fs';constmanifestPath='./src/manifest.json';letManifest=fs.readFileSync(manifestPath,{encoding:'utf-8'});functionreplaceManifest(path,value){constarr=path.split('.');constlen=arr.length;constlastItem=arr[len-1];leti=0;letManifestArr=Manifest.split(/\n/);for(letindex=0;index<ManifestArr.length;index++){constitem=ManifestArr[index];if(newRegExp(`"${arr[i]}"`).test(item))++i;if(i===len){consthasComma=/,/.test(item);ManifestArr[index]=item.replace(newRegExp(`"${lastItem}"[\\s\\S]*:[\\s\\S]*`),`"${lastItem}":${value}${hasComma?',':''}`);break;}}Manifest=ManifestArr.join('\n');}// 使用replaceManifest('app-plus.usingComponents',false);replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender',false);replaceManifest('mp-baidu.usingComponents',false);fs.writeFileSync(manifestPath,Manifest,{flag:'w',});exportdefaultdefineConfig({// ...});示例源码如下，请查看 pre > code 标签中的内容// 读取 manifest.json ，修改后重新写入
+import fs from 'fs';
+
+const manifestPath = './src/manifest.json';
+let Manifest = fs.readFileSync(manifestPath, { encoding: 'utf-8' });
+function replaceManifest(path, value) {
+	const arr = path.split('.');
+	const len = arr.length;
+	const lastItem = arr[len - 1];
+
+	let i = 0;
+	let ManifestArr = Manifest.split(/\n/);
+
+	for (let index = 0; index < ManifestArr.length; index++) {
+		const item = ManifestArr[index];
+		if (new RegExp(`"${arr[i]}"`).test(item)) ++i;
+		if (i === len) {
+			const hasComma = /,/.test(item);
+			ManifestArr[index] = item.replace(
+				new RegExp(`"${lastItem}"[\\s\\S]*:[\\s\\S]*`),
+				`"${lastItem}": ${value}${hasComma ? ',' : ''}`
+			);
+			break;
+		}
+	}
+
+	Manifest = ManifestArr.join('\n');
+}
+// 使用
+replaceManifest('app-plus.usingComponents', false);
+replaceManifest('app-plus.splashscreen.alwaysShowBeforeRender', false);
+replaceManifest('mp-baidu.usingComponents', false);
+fs.writeFileSync(manifestPath, Manifest, {
+	flag: 'w',
+});
+
+export default defineConfig({
+	// ...
+});启用压缩的方法：HBuilderX 创建的项目勾选运行-->运行到小程序模拟器-->运行时是否压缩代码cli 创建的项目可以在package.json中添加参数--minify#注意事项在 Mac M1 系列芯片电脑安装lightningcss等包含不同 CPU 架构二进制文件 npm 包的时候，会提示Cannot find module '../lightningcss.darwin-x64.node'，可以下载HBuilderX Arm版本规避此类问题。帮助我们改善此页面！上次更新:2025/8/14 19:40:47开发产品HBuilderXuni-appuni-app xuniClouduniMPsdk5+Runtimewap2appMUIuni-iduni-cdnuni-payuni-pushuni一键登录uni实人认证smsuni-starteruni-adminuni-upgrade-centeruni-imuni-aiuni-cmsuniCloud-mapuni-search运营产品uni-aduni统计uni发行uni安全专题开发者服务问答社区开发者后台技术文档uni-app文档uniCloud文档原生开发者支持文档HBuilder文档生态服务插件市场OAuth用户开放平台关于我们：DCloud官网案例需求墙许可协议加入我们赞助我们联系我们：商务合作：bd@dcloud.io广告合作：uniad@dcloud.ioDCloud.io数字天堂（北京）网络技术有限公司是HTML5中国产业联盟发起单位京公网安备：11010802035340号国家信息安全等级保护三级，证书编号：11010813802-20001本页导读注意事项
 
 ---
 

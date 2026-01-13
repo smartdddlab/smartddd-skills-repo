@@ -1,45 +1,6 @@
 # Uniapp - Uts
 
-**Pages:** 8
-
----
-
-## uni-app 和原生 App 混合开发问题 | uni-app官网
-
-**URL:** https://uniapp.dcloud.net.cn/hybrid.html
-
-**Contents:**
-- # uni-app 和原生 App 混合开发问题
-- # uni-app 和原生小程序混合开发问题
-      - 本页导读
-
-首先务必确认 uni-app 和原生代码，谁是主谁是从的问题。
-
-如果应用是 uni-app 开发为主，只是想离线打包，那么不应该使用 uni 小程序 sdk，而是使用 App 离线打包 SDK，参考 。 另注意离线打包无法享受插件市场的付费原生插件，如有相关需求需自己进行原生插件开发。
-
-方式 1：把原生小程序转换为 uni-app 源码。有各种转换工具，详见
-
-方式 2：新建一个 uni-app 项目，把原生小程序的代码变成小程序组件，进而整合到 uni-app 项目下。uni-app 支持使用小程序 wxml 组件，参考
-
-方式 3：原生开发的小程序仍保留，部分新功能使用 uni-app 开发。
-
-如果想充分发挥 uni-app 的跨端特性，编译到各种其他小程序平台，建议使用方案 1。
-
-如果不需要其他小程序平台，仅需要 h5 和 app，那方案 1 和方案 2 均可。
-
-如果只需要开发微信小程序，但想使用 vue 的方式开发、或者想利用 uni-app 的插件生态、或者部分页面想跨多端复用，那么使用方案 3。
-
-**Examples:**
-
-Example 1 (unknown):
-```unknown
-npm run build:mp-weixin --subpackage=sub1
-```
-
-Example 2 (unknown):
-```unknown
-yarn build:mp-weixin --subpackage=sub1
-```
+**Pages:** 6
 
 ---
 
@@ -92,45 +53,6 @@ HBuilderX是高效开发神器，熟练掌握后研发效率至少翻倍（即�
 从下面uni-app功能框架图可看出，uni-app在跨平台的过程中，不牺牲平台特色，可优雅的调用平台专有能力，真正做到海纳百川、各取所长。
 
 uni-app实现了一套代码，同时运行到多个平台；如下图所示，一套代码，同时运行到iOS模拟器、Android模拟器、web、微信开发者工具、支付宝小程序Studio、百度开发者工具、抖音开发者工具、QQ开发者工具（底部每个终端选项卡，代表1个终端模拟器）：
-
----
-
-## uni-app 和原生 App 混合开发问题 | uni-app官网
-
-**URL:** https://uniapp.dcloud.net.cn/hybrid
-
-**Contents:**
-- # uni-app 和原生 App 混合开发问题
-- # uni-app 和原生小程序混合开发问题
-      - 本页导读
-
-首先务必确认 uni-app 和原生代码，谁是主谁是从的问题。
-
-如果应用是 uni-app 开发为主，只是想离线打包，那么不应该使用 uni 小程序 sdk，而是使用 App 离线打包 SDK，参考 。 另注意离线打包无法享受插件市场的付费原生插件，如有相关需求需自己进行原生插件开发。
-
-方式 1：把原生小程序转换为 uni-app 源码。有各种转换工具，详见
-
-方式 2：新建一个 uni-app 项目，把原生小程序的代码变成小程序组件，进而整合到 uni-app 项目下。uni-app 支持使用小程序 wxml 组件，参考
-
-方式 3：原生开发的小程序仍保留，部分新功能使用 uni-app 开发。
-
-如果想充分发挥 uni-app 的跨端特性，编译到各种其他小程序平台，建议使用方案 1。
-
-如果不需要其他小程序平台，仅需要 h5 和 app，那方案 1 和方案 2 均可。
-
-如果只需要开发微信小程序，但想使用 vue 的方式开发、或者想利用 uni-app 的插件生态、或者部分页面想跨多端复用，那么使用方案 3。
-
-**Examples:**
-
-Example 1 (unknown):
-```unknown
-npm run build:mp-weixin --subpackage=sub1
-```
-
-Example 2 (unknown):
-```unknown
-yarn build:mp-weixin --subpackage=sub1
-```
 
 ---
 
