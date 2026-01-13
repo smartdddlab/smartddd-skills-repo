@@ -1,6 +1,6 @@
 ---
 name: SuperClaude
-description: Use when working with SuperClaude
+description: This skill should be used when the user asks to "work with SuperClaude", "use SuperClaude features", "implement SuperClaude solutions", "debug SuperClaude code", "learn SuperClaude best practices", or needs guidance on SuperClaude framework, commands, personas, and modes.
 ---
 
 # Superclaude Skill

@@ -1,6 +1,6 @@
 ---
 name: superclaude-invoker
-description: This skill should be used when the user needs to dynamically invoke SuperClaude commands from external tools like BMAD, spec-kit, or any CLI automation framework to enhance code development, problem analysis, test execution, and git operations.
+description: This skill should be used when the user asks to "invoke SuperClaude command", "dynamically invoke SuperClaude", "route SuperClaude commands", "use superclaude invoker", "integrate with BMAD", "call SuperClaude from CLI", or needs guidance on SuperClaude command routing, CLI automation, and external tool integration.
 version: 1.0.0
 author: SmartDDDLab
 license: MIT

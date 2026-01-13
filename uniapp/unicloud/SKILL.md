@@ -1,6 +1,6 @@
 ---
 name: uniCloud
-description: uniCloud 是 DCloud 联合阿里云、腾讯云、支付宝云，为开发者提供的基于 serverless 模式和 js 编程的云开发平台。使用此技能时，涉及 uniCloud 云函数、云数据库、云存储、clientDB、云对象、schema2code、uni-id、uni-pay 等开发问题。
+description: This skill should be used when the user asks to "develop with uniCloud", "use uniCloud cloud functions", "implement uniCloud database", "configure uniCloud storage", "build with clientDB", "use uni-id", "set up uni-pay", or needs guidance on DCloud's serverless cloud development platform, cloud functions, cloud database, and cloud storage.
 ---
 
 # Unicloud Skill

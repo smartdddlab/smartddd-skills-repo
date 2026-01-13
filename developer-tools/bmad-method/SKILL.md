@@ -1,6 +1,6 @@
 ---
 name: bmad-method
-description: Use when working with BMAD-METHOD
+description: This skill should be used when the user asks to "use BMAD-METHOD", "understand bmad method", "look up bmad API", "find bmad examples", "check bmad issues", or needs guidance on Breakthrough Method for Agile Ai Driven Development, BMAD workflows, and best practices.
 ---
 
 # BMAD-METHOD

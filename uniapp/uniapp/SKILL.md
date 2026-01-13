@@ -1,6 +1,6 @@
 ---
 name: uniapp
-description: uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、鸿蒙Next、Web（响应式）、以及各种小程序（微信/支付宝/百度/抖音/飞书/QQ/快手/钉钉/淘宝/京东/小红书）、快应用、鸿蒙元服务等多个平台。
+description: This skill should be used when the user asks to "develop with uni-app", "build cross-platform app", "create uni-app project", "use uni-app components", "develop for WeChat mini program", "implement uni-app API", "compile to iOS Android", or needs guidance on Vue.js based cross-platform development framework for iOS, Android, HarmonyOS, Web, and mini programs.
 ---
 
 # Uniapp Skill
