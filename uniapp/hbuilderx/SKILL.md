@@ -1,6 +1,6 @@
 ---
 name: hbuilderx
-description: This skill should be used when the user asks to "use HBuilderX", "develop with HBuilderX", "install HBuilderX", "HBuilderX plugin development", "HBuilderX API", "configure HBuilderX", "HBuilderX extension", or needs guidance on DCloud's lightweight IDE optimized for Vue development, multi-terminal development (App, H5, mini programs), and HBuilderX plugin extensions.
+description: This skill should be used when the user asks to "use HBuilderX", "develop with HBuilderX", "uniapp cli", "HBuilderX plugin development", "HBuilderX API", "configure HBuilderX", "HBuilderX extension", or needs guidance on DCloud's lightweight IDE optimized for Vue development, multi-terminal development (App, H5, mini programs), and HBuilderX plugin extensions.
 version: 1.0.0
 ---
 
