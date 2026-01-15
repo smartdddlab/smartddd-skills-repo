@@ -24,7 +24,7 @@ openskills install smartdddlab/smartddd-skills-repo
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
 | [superclaude-invoker](/developer-tools/superclaude-invoker/) | v1.0.0 | ✅ 活跃 | 在外部工具中动态调用 SuperClaude 命令 | 代码开发增强、问题分析、测试执行、Git 工作流 |
-| [bmad-method](/developer-tools/bmad-method/) | - | ✅ 活跃 | AI 驱动的敏捷开发方法论 | 12 个专业代理，50+ 工作流 |
+| [bmad-method](/developer-tools/bmad-method/) | v1.0.0 | ✅ 活跃 | AI 驱动的敏捷开发方法论 | 12 个专业代理，50+ 工作流 |
 | [skill-development](/developer-tools/skill-development/) | - | ✅ 活跃 | OpenSkills 技能开发指南 | 技能创建、最佳实践、渐进式披露 |
 
 ### 📱 uniapp 相关技能
@@ -87,6 +87,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-01-15 | 1.4.0 | 优化 bmad-method 技能元数据，添加完整版本信息和参考文档 |
 | 2026-01-13 | 1.3.0 | 新增 HBuilderX 技能，支持 DCloud IDE 开发、插件开发、Vue 项目开发 |
 | 2026-01-11 | 1.2.0 | 添加 uniapp 和 uniCloud 技能，支持跨平台应用开发和 Serverless 云开发 |
 | 2026-01-06 | 1.1.0 | 添加 superclaude-invoker 技能，支持在 BMAD、spec-kit 等外部工具中动态调用 SuperClaude 命令 |
