@@ -25,39 +25,60 @@ openskills install smartdddlab/smartddd-skills-repo/uniapp
 
 ### 安装 Skill_Seekers
 
-**前置条件：** 从官网安装 Skill_Seekers
+**前置条件：** 需要先安装 Skill_Seekers 工具
 
 ```bash
-# 使用官网安装方式（参考 Skill_Seekers 官方文档）
-# 安装后确保 skill_seekers 命令可用
-skill_seekers --version
+# 克隆 Skill_Seekers 仓库（或使用其他安装方式）
+git clone https://github.com/your-org/skill-seekers.git
+cd skill-seekers
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 验证安装
+python skill_seeker.py --help
 ```
 
-### 使用配置文件更新技能
+### 使用配置文件快速更新技能
 
-**基于本目录的配置文件生成技能：**
+**方法一：单个技能更新**
 
 ```bash
 # 设置工作目录
-REPO_ROOT=/path/to/smartddd-skills-repo  # 替换为实际路径
+SKILLS_REPO=/path/to/smartddd-skills-repo  # 替换为实际路径
+SKILL_SEEKERS=/path/to/Skill_Seekers
 
-# 更新 uniapp 技能（使用本目录的 uniapp.json）
-skill_seekers scrape $REPO_ROOT/uniapp/uniapp.json
+# 更新 uniapp 技能
+cd "$SKILL_SEEKERS"
+python skill_seeker.py "$SKILLS_REPO/uniapp/uniapp.json"
 
-# 解压到目标目录
-unzip -q -o uniapp.zip -d $REPO_ROOT/uniapp/uniapp/
+# 解压到目标目录（Skill_Seekers 自动输出到 output/ 目录）
+cp -r output/uniapp/* "$SKILLS_REPO/uniapp/uniapp/"
 
-# 更新 uniCloud 技能（使用本目录的 unicloud.json）
-skill_seekers scrape $REPO_ROOT/uniapp/unicloud.json
+# 复制配置文件到技能目录（便于后续更新）
+cp "$SKILLS_REPO/uniapp/uniapp.json" "$SKILLS_REPO/uniapp/uniapp/"
+```
 
-# 解压到目标目录
-unzip -q -o unicloud.zip -d $REPO_ROOT/uniapp/unicloud/
+**方法二：批量更新所有 uniapp 技能**
 
-# 更新 HBuilderX 技能（使用本目录的 hbuilderx.json）
-skill_seekers scrape $REPO_ROOT/uniapp/hbuilderx.json
+```bash
+# 设置工作目录
+SKILLS_REPO=/path/to/smartddd-skills-repo
+SKILL_SEEKERS=/path/to/Skill_Seekers
 
-# 解压到目标目录
-unzip -q -o hbuilderx.zip -d $REPO_ROOT/uniapp/hbuilderx/
+# 批量更新
+cd "$SKILL_SEEKERS"
+for config in "$SKILLS_REPO"/uniapp/*.json; do
+  echo "正在更新: $(basename "$config" .json)"
+  python skill_seeker.py "$config"
+
+  # 解压到对应目录
+  skill_name=$(basename "$config" .json)
+  cp -r "output/$skill_name"/* "$SKILLS_REPO/uniapp/$skill_name/"
+
+  # 复制配置文件
+  cp "$config" "$SKILLS_REPO/uniapp/$skill_name/"
+done
 ```
 
 ### 配置文件说明
