@@ -23,6 +23,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 技能 | 版本 | 状态 | 描述 | 主要功能 |
 |------|------|------|------|----------|
+| [claude-code](/developer-tools/claude-code/) | v1.0.0 | ✅ 活跃 | Claude Code CLI 官方 AI 编码助手 | MCP 集成、自定义技能、智能工作流、IDE 集成 |
 | [superclaude-invoker](/developer-tools/superclaude-invoker/) | v1.0.0 | ✅ 活跃 | 在外部工具中动态调用 SuperClaude 命令 | 代码开发增强、问题分析、测试执行、Git 工作流 |
 | [bmad-method](/developer-tools/bmad-method/) | v1.0.0 | ✅ 活跃 | AI 驱动的敏捷开发方法论 | 12 个专业代理，50+ 工作流 |
 | [opencode](/developer-tools/opencode/) | v1.0.0 | ✅ 活跃 | 开源 AI 编码代理 | 多提供商支持、自定义代理、MCP 集成、插件生态 |
@@ -88,6 +89,7 @@ openskills install smartdddlab/smartddd-skills-repo
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-01-23 | 1.6.0 | 新增 Claude Code 技能，支持官方 AI 编码助手 CLI、MCP 集成、自定义技能 |
 | 2026-01-23 | 1.5.0 | 新增 OpenCode 技能，支持多提供商 AI 编码代理、自定义代理、MCP 服务器集成 |
 | 2026-01-15 | 1.4.0 | 优化 bmad-method 技能元数据，添加完整版本信息和参考文档 |
 | 2026-01-13 | 1.3.0 | 新增 HBuilderX 技能，支持 DCloud IDE 开发、插件开发、Vue 项目开发 |

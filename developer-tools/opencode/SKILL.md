@@ -1,6 +1,6 @@
 ---
 name: opencode
-description: This skill should be used when the user asks to "use opencode", "configure opencode", "opencode commands", "opencode providers", or needs guidance on OpenCode installation, configuration, providers, commands, modes, plugins, MCP servers, tools, and all OpenCode features.
+description: This skill should be used when the user asks to "use opencode", "configure opencode", "opencode commands", "opencode providers", "opencode mcp servers", "opencode agents", or needs guidance on OpenCode installation, configuration, providers, commands, modes, plugins, MCP integration, tools, and all OpenCode features.
 version: 1.0.0
 author: SmartDDDLab
 license: MIT
