@@ -7,7 +7,7 @@ document_output language: Chinese
 
 ## 项目概述
 
-这是一个 **OpenSkills 技能仓库** - 不是传统的软件项目。它包含使用 OpenSkills 生态系统的 AI 编码代理（Claude Code、Cursor、Windsurf、Aider）的技能定义。该仓库提供各种 AI 代理框架与 SuperClaude 命令之间的桥接功能。
+这是一个 **OpenSkills 技能仓库** - 不是传统的软件项目。它包含使用 AI 编码代理（Claude Code、opencode）的技能定义。
 
 ## 本仓库规范
 
