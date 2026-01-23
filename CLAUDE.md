@@ -9,6 +9,23 @@ document_output language: Chinese
 
 这是一个 **OpenSkills 技能仓库** - 不是传统的软件项目。它包含使用 AI 编码代理（Claude Code、opencode）的技能定义。
 
+## 技能使用场景
+
+每个技能都有明确的使用场景和触发条件。详见 [AGENTS.md](AGENTS.md) 获取完整的技能使用场景分析。
+
+**快速技能选择参考：**
+
+| 技能 | 什么时候用 |
+|------|-----------|
+| claude-code | 使用 Claude Code CLI、配置 MCP、创建自定义技能时 |
+| superclaude-invoker | 在外部工具（BMAD、spec-kit）中调用 SuperClaude 命令时 |
+| bmad-method | 使用 BMAD 敏捷 AI 驱动开发方法论时 |
+| opencode | 使用 OpenCode 开源 AI 编码代理时 |
+| skill-development | 创建或优化技能时 |
+| uniapp | 使用 Vue.js 开发跨平台应用时 |
+| unicloud | 使用 DCloud Serverless 云开发平台时 |
+| hbuilderx | 使用 HBuilderX IDE 或开发插件时 |
+
 ## 本仓库规范
 
 ### 技能目录结构
