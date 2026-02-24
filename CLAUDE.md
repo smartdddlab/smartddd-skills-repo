@@ -218,6 +218,9 @@ superclaude-bridge 返回路由后的命令字符串，不执行它们。
 - `.gitignore` 排除：临时文件、编辑器文件、OpenSkills 缓存、本地文档
 - 提交消息应引用技能名称和版本
 - **每次技能变更后需同步更新 README.md**
+- **推送规则：所有变更必须推送到 main 分支**
+  - 可以在 feature 分支开发，但完成后需合并到 main 并推送
+  - 使用 `gh auth setup-git` 配置 GitHub CLI 认证后推送
 
 ---
 
