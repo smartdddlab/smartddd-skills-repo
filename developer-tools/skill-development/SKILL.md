@@ -538,6 +538,105 @@ Use the grep tool to search for patterns.
 
 **Why good:** Claude knows where to find additional information
 
+## Best-Practices Skill Format
+
+When creating a "best practices" style skill (like react-best-practices, vue-best-practices), follow this specific format optimized for code review and refactoring:
+
+### Directory Structure
+
+```
+best-practices-skill/
+├── SKILL.md           # Quick reference with rule categories
+├── AGENTS.md          # Compiled full document (all rules expanded)
+├── README.md          # Project documentation
+├── metadata.json      # Version, author, abstract
+└── rules/             # Individual rule files
+    ├── _template.md   # Rule template
+    ├── platform-*.md  # Rules by category prefix
+    ├── perf-*.md
+    └── ...
+```
+
+### Rule File Format
+
+Each rule file should be concise with clear Incorrect/Correct comparison:
+
+```markdown
+---
+title: Rule Title Here
+impact: MEDIUM
+impactDescription: Optional description of impact
+tags: tag1, tag2
+---
+
+## Rule Title Here
+
+Brief explanation of the rule.
+
+**Incorrect (description):**
+
+```javascript
+// Bad code - brief example
+```
+
+**Correct (description):**
+
+```javascript
+// Good code - brief example
+```
+
+Reference: [Link](https://docs.example.com)
+```
+
+### SKILL.md for Best Practices
+
+Keep SKILL.md as a quick reference table:
+
+```markdown
+## Rule Categories by Priority
+
+| Priority | Category | Impact | Prefix |
+|----------|----------|--------|--------|
+| 1 | Cross-Platform | CRITICAL | `platform-` |
+| 2 | Performance | HIGH | `perf-` |
+| 3 | Components | MEDIUM | `component-` |
+
+## Quick Reference
+
+### 1. Cross-Platform (CRITICAL)
+
+- `platform-conditional-compile` - Use #ifdef for platform code
+- `platform-api-wrapper` - Use uni.* APIs
+
+### 2. Performance (HIGH)
+
+- `perf-subpackages` - Use subpackages for large apps
+```
+
+### Key Differences from Standard Skills
+
+| Aspect | Standard Skill | Best-Practices Skill |
+|--------|---------------|---------------------|
+| Rules directory | `references/rules/` | `rules/` (root) |
+| Rule format | Long tutorial | Concise Incorrect/Correct |
+| SKILL.md | Detailed guide | Quick reference table |
+| AGENTS.md | Optional | Required (compiled) |
+| metadata.json | Optional | Required |
+| Impact levels | No | CRITICAL/HIGH/MEDIUM/LOW |
+
+### Impact Levels
+
+- `CRITICAL` - Must fix, breaks functionality
+- `HIGH` - Significant user experience impact
+- `MEDIUM` - Best practice, moderate impact
+- `LOW` - Nice to have, incremental improvement
+
+### File Naming Convention
+
+- Rules: `category-description.md` (e.g., `platform-conditional-compile.md`)
+- Category prefixes determine section grouping
+- Alphabetical sorting within sections
+
 ## Quick Reference
 
 ### Minimal Skill
