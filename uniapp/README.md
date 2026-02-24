@@ -7,6 +7,7 @@
 | 技能 | 版本 | 描述 |
 |------|------|------|
 | [uniapp](./uniapp/) | v1.1.0 | 使用 Vue.js 开发所有前端应用的框架，支持 iOS、Android、鸿蒙Next、Web 及各种小程序 |
+| [uniapp-best-practices](./uniapp-best-practices/) | v1.0.0 | UniApp 最佳实践指南，涵盖 API 规范、组件开发、状态管理、路由、性能优化、样式、生命周期、TypeScript 等 20+ 规则 |
 | [unicloud](./unicloud/) | v1.0.0 | DCloud 联合阿里云、腾讯云、支付宝云提供的 Serverless 云开发平台 |
 | [hbuilderx](./hbuilderx/) | v1.0.0 | DCloud 轻量级 IDE，专为 Vue 开发优化，支持多端开发、插件扩展、Markdown 编写 |
 
@@ -147,6 +148,20 @@ echo "更新完成！"
   - 混合开发 (hybrid.md)
   - 广告变现 (uni_ad.md)
 
+### uniapp-best-practices
+
+- **官方文档**: https://uniapp.dcloud.net.cn/
+- **适用场景**: UniApp 开发规范、性能优化、跨平台最佳实践
+- **主要内容** (20+ 规则):
+  - **API 规范**: 条件编译、平台 API、异步处理
+  - **组件规范**: 内置组件、自定义组件、nvue 差异、事件处理
+  - **状态管理**: Pinia 集成、数据持久化
+  - **路由规范**: 页面导航、参数传递
+  - **性能优化**: 分包加载、长列表、图片优化
+  - **样式规范**: rpx 单位、条件样式
+  - **生命周期**: 页面生命周期、组件生命周期
+  - **TypeScript**: 类型定义、API 类型
+
 ### uniCloud
 
 - **官方文档**: https://doc.dcloud.net.cn/uniCloud/
@@ -198,6 +213,7 @@ skills-ref validate ./uniapp/hbuilderx
 
 | 日期 | 版本 | 变更内容 |
 |------|------|----------|
+| 2026-02-24 | 1.3.0 | 新增 uniapp-best-practices 技能，提供 20+ 开发规范和最佳实践 |
 | 2026-01-13 | 1.2.0 | 新增 HBuilderX 技能，支持 DCloud IDE 开发、插件开发、Vue 项目开发 |
 | 2026-01-13 | 1.1.0 | 更新技能内容，添加 dev.md、hybrid.md、uni_ad.md 等新参考文档 |
 | 2026-01-11 | 1.0.0 | 初始版本，添加 uniapp 和 uniCloud 技能 |

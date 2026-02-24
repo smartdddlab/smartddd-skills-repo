@@ -190,6 +190,33 @@
 
 ---
 
+### uniapp-best-practices
+
+**什么时候用：**
+- 用户询问 "UniApp best practices"、"UniApp 开发规范"
+- 需要了解跨平台开发最佳实践
+- 优化 UniApp 应用性能
+- 处理平台差异（H5、小程序、App）
+- 使用 TypeScript 开发 UniApp
+- 配置分包加载
+- 实现状态管理（Pinia）
+- 处理页面生命周期
+- 优化长列表和图片
+
+**核心触发词：**
+`uniapp best practices`, `uni-app 开发规范`, `cross-platform guidelines`, `uniapp 性能优化`, `uniapp typescript`, `条件编译`, `分包加载`, `pinia uniapp`
+
+**典型使用场景：**
+1. 新建 UniApp 项目时参考规范
+2. 处理 H5/小程序/App 平台差异
+3. 优化应用性能（分包、长列表、图片）
+4. 使用 TypeScript 类型定义
+5. 配置 Pinia 状态管理
+6. 正确使用页面/组件生命周期
+7. 编写可维护的样式代码
+
+---
+
 ## 技能选择决策树
 
 ```
@@ -200,7 +227,9 @@
 │   ├── SuperClaude 集成？ → superclaude-invoker
 │   └── BMAD 方法论？ → bmad-method
 ├── 跨平台开发？
-│   ├── Vue.js 框架？ → uniapp
+│   ├── Vue.js 框架？
+│   │   ├── 项目创建/API → uniapp
+│   │   └── 最佳实践/规范 → uniapp-best-practices
 │   ├── 云开发？ → unicloud
 │   └── IDE 工具？ → hbuilderx
 └── 技能开发？
@@ -238,6 +267,7 @@
 | opencode | opencode, providers, mcp servers, custom agents |
 | skill-development | create skill, skill structure, progressive disclosure |
 | uniapp | uniapp, cross-platform, vue mobile, mini program |
+| uniapp-best-practices | uniapp best practices, 开发规范, 性能优化, 条件编译 |
 | unicloud | unicloud, cloud functions, cloud database, uni-id |
 | hbuilderx | hbuilderx, plugin development, vue ide |
 
