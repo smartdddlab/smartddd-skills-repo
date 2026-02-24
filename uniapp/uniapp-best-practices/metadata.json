@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "organization": "SmartDDDLab",
+  "date": "February 2026",
+  "abstract": "Comprehensive best practices guide for UniApp cross-platform development, designed for AI agents and LLMs. Contains 22 rules across 6 categories, prioritized by impact from critical (cross-platform compatibility) to incremental (styling, TypeScript). Each rule includes detailed explanations, real-world examples comparing incorrect vs. correct implementations, and specific impact metrics to guide development and code review.",
+  "references": [
+    "https://uniapp.dcloud.net.cn/",
+    "https://vuejs.org/",
+    "https://pinia.vuejs.org/",
+    "https://developers.weixin.qq.com/miniprogram/dev/framework/"
+  ]
+}
