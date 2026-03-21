@@ -5,6 +5,7 @@
 *.log
 .DS_Store
 Thumbs.db
+_dev
 
 # 编辑器/IDE
 .vscode/
@@ -24,4 +25,3 @@ docs/
 node_modules/
 package-lock.json
 npm-debug.log
-
